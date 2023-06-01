@@ -59,6 +59,8 @@ group :development, :test do
   gem 'orderly'
   gem 'shoulda-matchers'
   gem 'net-http'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
