@@ -33,7 +33,7 @@ RSpec.describe PlaygroundsFacade do
 
   describe 'Playgrounds Facade' do
     it 'exists' do
-      playground = PlaygroundsFacade.new('80123', 1)
+      playground = PlaygroundsFacade.new('90210', 1)
       
       expect(playground).to be_a PlaygroundsFacade
     end
@@ -41,10 +41,16 @@ RSpec.describe PlaygroundsFacade do
 
   describe 'Can create playground objects' do
     it '#playgrounds' do
-      playground = PlaygroundsFacade.new('80123', 1)
+      playground = PlaygroundsFacade.new('90210', 1)
       
       expect(playground.playgrounds).to be_an Array
       expect(playground.playgrounds.first).to be_a Playground
+      
+      expect(playground.playgrounds.first.id).to be_a String
+      expect(playground.playgrounds.first.name).to be_a String
+      expect(playground.playgrounds.first.address).to be_a String
+      expect(playground.playgrounds.first.rating).to be_a String
+
     end
   end
 end
