@@ -1,7 +1,7 @@
 <h1>Welcome to PlayPal</h1>
 <h3>The one stop shop for discovering playgrounds near you!</h3>
 
-<%= button_to 'Login With Google' %> <%# input route to create session %>
+<%= button_to 'Login With Google', '/auth/google_oauth2/callback', method: :get %>
 <br><br>
 <h3>Find a Playground Near Me</h3>
 <%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
