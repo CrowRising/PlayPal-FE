@@ -78,4 +78,14 @@ RSpec.describe '/welcome#index', type: :feature do
       expect(page).to_not have_button('Logout')
     end
   end
+
+  describe 'Discover Playgrounds' do
+    it 'can fill in location and or radius to discover playground' do
+
+      fill_in 'location', with: '90210'
+      fill_in 'radius', with: '1'
+
+      click_button "Discover Playgrounds"
+    end
+  end
 end
