@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <% flash.each do |type, message| %>
+    <p><%= message %></p>
+    <% end %>
     <%= link_to 'Home', root_path %>
     <% if session[:user_id] %>
       <%= link_to 'Dashboard', dashboard_path %>
