@@ -12,6 +12,9 @@
 
   <body>
     <%= link_to 'Home', root_path %>
-    <%= yield %>
+    <% if session[:user_id] %>
+      <%= link_to 'Dashboard', dashboard_path %>
+    <% end %>
+      <%= yield %>
   </body>
 </html>
