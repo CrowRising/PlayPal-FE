@@ -80,12 +80,38 @@ RSpec.describe '/welcome#index', type: :feature do
   end
 
   describe 'Discover Playgrounds' do
-    it 'can fill in location and or radius to discover playground' do
+    it 'can fill in location and radius to discover playground' do
 
       fill_in 'location', with: '90210'
       fill_in 'radius', with: '1'
-
       click_button "Discover Playgrounds"
+
+      expect(current_path).to eq(playground_index_path)
+    end
+
+    it 'can fill just location to discover playground' do
+
+      fill_in 'location', with: '90210'
+      click_button "Discover Playgrounds"
+
+      expect(current_path).to eq(playground_index_path)
+    end
+
+    it 'displays error message if no fields are filled in' do
+    
+      click_button "Discover Playgrounds"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Error: Must add location!")
+    end
+
+    it 'displays error message if only radius field is filled in' do
+
+      fill_in 'radius', with: '2'
+      click_button "Discover Playgrounds"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Error: Must add location!")
     end
   end
 end
