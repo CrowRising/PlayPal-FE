@@ -2,7 +2,7 @@ class PlaygroundsFacade
 
   def initialize(location, radius)
     @location = location
-    @radius = radius
+    @radius = format_radius(radius)
   end
 
   def playgrounds
@@ -18,5 +18,9 @@ class PlaygroundsFacade
 
   def playgrounds_data
     @_playgrounds_data ||= service.get_playgrounds(@location, @radius)[:data]
+  end
+
+  def format_radius(miles)
+    miles * 1600
   end
 end
