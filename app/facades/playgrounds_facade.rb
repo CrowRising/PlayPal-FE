@@ -1,7 +1,7 @@
 class PlaygroundsFacade
 
   def initialize(location, radius)
-    @location = location
+    @location = format_location(location)
     @radius = format_radius(radius)
   end
 
@@ -22,5 +22,9 @@ class PlaygroundsFacade
 
   def format_radius(miles)
     miles * 1600
+  end
+
+  def format_location(location)
+    location.gsub(' ', '%20')
   end
 end
