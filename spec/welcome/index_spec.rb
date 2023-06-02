@@ -28,4 +28,10 @@ RSpec.describe '/welcome#index', type: :feature do
       expect(page).to have_button('Discover Playgrounds')
     end
   end
+
+  describe 'User Login' do
+    it 'They can login with their google account' do
+      
+    end
+  end
 end
