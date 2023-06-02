@@ -31,7 +31,7 @@ RSpec.describe '/welcome#index', type: :feature do
     end
 
     it 'They see a button to login with a google account' do
-      expect(page).to have_button('Login With Google')
+      expect(page).to have_link('Login With Google')
       expect(page).to_not have_button('Logout')
     end
 
@@ -44,13 +44,13 @@ RSpec.describe '/welcome#index', type: :feature do
 
   describe 'User Login' do
     it 'They can login with their google account and are redirected to their dashboard' do
-      click_button('Login With Google')
+      click_link('Login With Google')
 
       expect(current_path).to eq(dashboard_path)
     end
 
     it 'When logged in they see a link at the top of the page to go to their dashboard' do
-      click_button('Login With Google')
+      click_link('Login With Google')
       click_link('Home')
 
       expect(page).to have_link('Dashboard')
@@ -61,20 +61,20 @@ RSpec.describe '/welcome#index', type: :feature do
     end
 
     it 'When logged in and they click home, they see a logout button and not a login button' do
-      click_button('Login With Google')
+      click_link('Login With Google')
       click_link('Home')
 
       expect(page).to have_button('Logout')
-      expect(page).to_not have_button('Login With Google')
+      expect(page).to_not have_link('Login With Google')
     end
 
     it 'When a user logs out, they are redirected back to the home page and a login button is shown' do
-      click_button('Login With Google')
+      click_link('Login With Google')
       click_link('Home')
       click_button('Logout')
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_button('Login With Google')
+      expect(page).to have_link('Login With Google')
       expect(page).to_not have_button('Logout')
     end
   end
