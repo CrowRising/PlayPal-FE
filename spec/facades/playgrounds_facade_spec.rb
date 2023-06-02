@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PlaygroundsFacade do
   before(:each) do
-    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1600").
+    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/123%20st/1600").
     with(
       headers: {
     'Accept'=>'*/*',
@@ -33,7 +33,7 @@ RSpec.describe PlaygroundsFacade do
 
   describe 'Playgrounds Facade' do
     it 'exists' do
-      playground = PlaygroundsFacade.new('90210', 1)
+      playground = PlaygroundsFacade.new('123 st', 1)
       
       expect(playground).to be_a PlaygroundsFacade
     end
@@ -41,7 +41,7 @@ RSpec.describe PlaygroundsFacade do
 
   describe 'Can create playground objects' do
     it '#playgrounds' do
-      playground = PlaygroundsFacade.new('90210', 1)
+      playground = PlaygroundsFacade.new('123 st', 1)
       
       expect(playground.playgrounds).to be_an Array
       expect(playground.playgrounds.first).to be_a Playground
