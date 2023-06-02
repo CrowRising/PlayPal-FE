@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe '/welcome#index', type: :feature do
@@ -21,7 +23,7 @@ RSpec.describe '/welcome#index', type: :feature do
       expect(page).to have_content('Welcome to PlayPal')
     end
 
-    it 'They see a link at the top of the page to go back to the welcome page and not a dashboard link' do 
+    it 'They see a link at the top of the page to go back to the welcome page and not a dashboard link' do
       expect(page).to have_link('Home')
       expect(page).to_not have_link('Dashboard')
 
@@ -81,37 +83,33 @@ RSpec.describe '/welcome#index', type: :feature do
 
   describe 'Discover Playgrounds' do
     it 'can fill in location and radius to discover playground' do
-
       fill_in 'location', with: '90210'
       fill_in 'radius', with: '1'
-      click_button "Discover Playgrounds"
+      click_button 'Discover Playgrounds'
 
       expect(current_path).to eq(playgrounds_path)
     end
 
     it 'can fill just location to discover playground' do
-
       fill_in 'location', with: '90210'
-      click_button "Discover Playgrounds"
+      click_button 'Discover Playgrounds'
 
       expect(current_path).to eq(playgrounds_path)
     end
 
     it 'displays error message if no fields are filled in' do
-    
-      click_button "Discover Playgrounds"
+      click_button 'Discover Playgrounds'
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content("Error: Must add location!")
+      expect(page).to have_content('Error: Must add location!')
     end
 
     it 'displays error message if only radius field is filled in' do
-
       fill_in 'radius', with: '2'
-      click_button "Discover Playgrounds"
+      click_button 'Discover Playgrounds'
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content("Error: Must add location!")
+      expect(page).to have_content('Error: Must add location!')
     end
   end
 end
