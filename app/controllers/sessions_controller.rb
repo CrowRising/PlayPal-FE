@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def create
-   
     google_id = auth_hash['uid']
     name = auth_hash['info']['name']
     email = auth_hash['info']['email']
@@ -10,9 +9,7 @@ class SessionsController < ApplicationController
     user.update(name: name, token: token, email: email)
     
     session[:user_id] = user.id
-    
     redirect_to '/dashboard'
-
   end
 
   private

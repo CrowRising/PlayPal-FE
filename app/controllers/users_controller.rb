@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class UsersController < ApplicationController
 
   def show
     # require 'pry'; binding.pry
