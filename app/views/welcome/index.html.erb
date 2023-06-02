@@ -1,1 +1,14 @@
 <h1>Welcome to PlayPal</h1>
+<h3>The one stop shop for discovering playgrounds near you!</h3>
+
+<%= button_to 'Login With Google' %> <%# input route to create session %>
+<br><br>
+<h3>Find a Playground Near Me</h3>
+<%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
+  <%= f.label :location, 'Input zipcode/your address' %>
+  <%= f.text_field :location %>
+  <br><br>
+  <%= f.label :radius, 'Search Mile Radius' %>
+  <%= f.number_field :radius %>
+  <%= f.submit 'Discover Playgrounds' %>
+<% end %>
