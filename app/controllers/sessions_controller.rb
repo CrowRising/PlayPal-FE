@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     email = auth_hash['info']['email']
     token = auth_hash['credentials']['token']
 
-    user = User.find_or_create_by(email: email)
-    user.update(google_id: google_id, token: token)
+    user = User.find_or_create_by(name: name)
+    user.update(google_id: google_id, token: token, email: email)
 
-    session[:user_id] = user.index
+    session[:user_id] = user.id
 
     redirect_to '/dashboard'
 
