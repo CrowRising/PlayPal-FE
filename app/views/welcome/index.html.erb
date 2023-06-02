@@ -5,10 +5,11 @@
 <br><br>
 <h3>Find a Playground Near Me</h3>
 <%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
-  <%= f.label :location, 'Input zipcode/your address' %>
+  <%= f.label :location %>
   <%= f.text_field :location %>
   <br><br>
-  <%= f.label :radius, 'Search Mile Radius' %>
+  <%= f.label :radius, 'Search Mile Radius', step: 0.5 %>
   <%= f.number_field :radius %>
+  <br><br>
   <%= f.submit 'Discover Playgrounds' %>
 <% end %>
