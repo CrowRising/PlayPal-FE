@@ -1,0 +1,95 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/controllers/sessions_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/crowrising/Turing/3Mod/Projects/play_pal_fe/app/models/user.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1685667575
+  }
+}
