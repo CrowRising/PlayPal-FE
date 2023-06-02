@@ -4,7 +4,7 @@
 <% if session[:user_id] %>
   <%= button_to 'Logout', '/logout', method: :delete %>
 <% else %>
-  <%= button_to 'Login With Google', '/auth/google_oauth2/callback', method: :get %>
+  <%= link_to 'Login With Google', '/auth/google_oauth2' %>
 <% end %>
 <br><br>
 <h3>Find a Playground Near Me</h3>
