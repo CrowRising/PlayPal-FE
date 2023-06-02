@@ -1,6 +1,6 @@
 class Playground
   attr_reader :id, :name, :address, :rating
-  
+
   def initialize(data)
     @id = data[:id]
     @name = data[:attributes][:playground_name]
