@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PlaygroundsService do
-  let(:get_playgrounds) { PlaygroundsService.new.get_playgrounds(90210, 1) }
+  let(:get_playgrounds) { PlaygroundsService.new.get_playgrounds(90210, 1600) }
 
   before(:each) do
-    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1").
+    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1600").
     with(
       headers: {
     'Accept'=>'*/*',
