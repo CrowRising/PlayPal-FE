@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PlaygroundsFacade do
   before(:each) do
-    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1").
+    stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1600").
     with(
       headers: {
     'Accept'=>'*/*',
