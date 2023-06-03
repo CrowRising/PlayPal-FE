@@ -40,7 +40,6 @@ RSpec.describe '/playgrounds#index', type: :feature do
 
   describe 'Playgrounds Index' do
     it 'displays list of playgrounds and attributes' do
-
       expect(current_path).to eq(playgrounds_path)
 
       within '#pg-23' do
@@ -57,7 +56,6 @@ RSpec.describe '/playgrounds#index', type: :feature do
     end
 
     it 'each playground name is a link to their show page' do
-    
       within '#pg-23' do
         expect(page).to have_link('Fehringer')
       end
@@ -68,11 +66,29 @@ RSpec.describe '/playgrounds#index', type: :feature do
     end
 
     it 'when link is clicked it takes user to playground show page' do
-     
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23')
+        .with(
+          headers: {
+            'Accept' => '*/*',
+            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'User-Agent' => 'Faraday v2.7.5'
+          }
+        )
+        .to_return(status: 200, body: JSON.generate({ "data":
+                                                      {
+                                                        "id": '2',
+                                                        "type": 'playground',
+                                                        "attributes": {
+                                                          "playground_name": 'Fehringer',
+                                                          "playground_address": 'Full address',
+                                                          "rating": '4.2'
+                                                        }
+                                                      } }), headers: {})
+
       within '#pg-23' do
         click_link 'Fehringer'
       end
-      expect(current_path).to eq('/playgrounds/:id')
+      expect(current_path).to eq('/playgrounds/23')
     end
   end
 end
