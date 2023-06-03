@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
 
   get '/playgrounds', to: 'playgrounds#index'
+  get '/playgrounds/:id', to: 'playgrounds#show'
 end
