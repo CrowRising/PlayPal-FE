@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe '/playgrounds#show' do
@@ -10,23 +12,21 @@ RSpec.describe '/playgrounds#show' do
           'User-Agent' => 'Faraday v2.7.5'
         }
       )
-      .to_return(status: 200, body: JSON.generate({ "data": 
+      .to_return(status: 200, body: JSON.generate({ "data":
                                                     {
-                                                      "id": "2",
-                                                      "type": "playground",
+                                                      "id": '2',
+                                                      "type": 'playground',
                                                       "attributes": {
-                                                          "playground_name": "Fehringer",
-                                                          "playground_address": "Full address",
-                                                          "rating": "4.2"
+                                                        "playground_name": 'Fehringer',
+                                                        "playground_address": 'Full address',
+                                                        "rating": '4.2'
                                                       }
-                                                    }
-                                                  } ), headers: {})
+                                                    } }), headers: {})
     visit '/playgrounds/2'
   end
 
   describe 'Playground Show Page' do
     it 'displays name of playground and attributes' do
-
       expect(page).to have_content('Fehringer')
       expect(page).to have_content('Full address')
       expect(page).to have_content('Rating: 4.2')
@@ -42,7 +42,6 @@ RSpec.describe '/playgrounds#show' do
     end
 
     xit 'displays button to add playground to favorites' do
-
       expect(page).to have_button('This place rules!')
 
       click
