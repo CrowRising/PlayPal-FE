@@ -1,0 +1,14 @@
+<h1>PlayPal</h1>
+
+<p><% @facade.playgrounds.each do |pg| %>
+  <div id='pg-<%= pg.id %>'>
+    <ul>
+    <li>  <p>Name: <%= link_to pg.name, "/playgrounds/#{pg.id}" %>
+      Address: <%= pg.address %>
+      Rating: <%= pg.rating%></p>
+    </li>
+    </ul>
+    
+  </div>  
+    <% end %>
+
