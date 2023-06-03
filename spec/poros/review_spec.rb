@@ -14,7 +14,7 @@ RSpec.describe Review do
         playground_id: '6'
       }
     }
-
+    user = create(:user, id: 1)
     review = Review.new(review_data)
 
     expect(review).to be_a Review
@@ -24,5 +24,7 @@ RSpec.describe Review do
     expect(review.rating).to eq('3')
     expect(review.image).to eq('img')
     expect(review.playground_id).to eq('6')
+
+    expect(review.user_name).to eq(user.name)
   end
 end
