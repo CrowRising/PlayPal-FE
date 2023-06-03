@@ -51,7 +51,7 @@ RSpec.describe '/playgrounds#show' do
     it 'displays the reviews other users have left including their name and rating' do
       visit 'playgrounds/24'
       expect(page).to have_content('Reviews:')
-      
+    
       within "#review_322458" do
         expect(page).to have_content("Author: #{@user.name}")
         expect(page).to have_content("Review: comment")
@@ -75,7 +75,6 @@ RSpec.describe '/playgrounds#show' do
 
     it 'does not show the this place rules button if not logged in' do
       visit 'playgrounds/24'
-
       expect(page).to_not have_link('This Place Rules!')
     end
   end
