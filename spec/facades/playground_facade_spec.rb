@@ -25,7 +25,7 @@ RSpec.describe PlaygroundFacade do
       expect(pg.playground_rating).to eq('4.2')
     end
 
-    it 'can get reviews for single playground' d
+    it 'can get reviews for single playground' do
       pg = PlaygroundFacade.new('24').review
 
       expect(pg).to be_an Array
