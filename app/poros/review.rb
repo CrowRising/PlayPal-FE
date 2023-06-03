@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Review
   attr_reader :id,
               :comment,
@@ -5,7 +7,7 @@ class Review
               :rating,
               :image,
               :playground_id
-              
+
   def initialize(data)
     @id = data[:id]
     @comment = data[:attributes][:comment]
