@@ -20,6 +20,5 @@ class PlaygroundsService
 
   def get_reviews(id)
     get_url("/api/v0/playgrounds/#{id}/reviews")
-
   end
 end
