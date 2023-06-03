@@ -4,34 +4,15 @@ require 'rails_helper'
 
 RSpec.describe '/playgrounds#index', type: :feature do
   before(:each) do
+    stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
     stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/123%20st/1600')
-      .with(
-        headers: {
-          'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent' => 'Faraday v2.7.5'
-        }
-      )
-      .to_return(status: 200, body: JSON.generate("data": [
-                                                    {
-                                                      "type": 'playground',
-                                                      "id": '23',
-                                                      "attributes": {
-                                                        "playground_name": 'Fehringer',
-                                                        "playground_address": '1400 U Street',
-                                                        "rating": '2.5'
-                                                      }
-                                                    },
-                                                    {
-                                                      "type": 'playground',
-                                                      "id": '24',
-                                                      "attributes": {
-                                                        "playground_name": 'Birds Nest',
-                                                        "playground_address": '1700 U Street',
-                                                        "rating": '2.7'
-                                                      }
-                                                    }
-                                                  ]), headers: {})
+    .to_return(status: 200, body: stubbed_response)
+
+    stubbed_response = File.read('spec/fixtures/playground_2_data.json')
+    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23')
+    .to_return(status: 200, body: stubbed_response)
+
+    
     visit root_path
     fill_in 'location', with: '123 st'
     fill_in 'radius', with: '1'
@@ -66,24 +47,6 @@ RSpec.describe '/playgrounds#index', type: :feature do
     end
 
     it 'when link is clicked it takes user to playground show page' do
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23')
-        .with(
-          headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent' => 'Faraday v2.7.5'
-          }
-        )
-        .to_return(status: 200, body: JSON.generate({ "data":
-                                                      {
-                                                        "id": '2',
-                                                        "type": 'playground',
-                                                        "attributes": {
-                                                          "playground_name": 'Fehringer',
-                                                          "playground_address": 'Full address',
-                                                          "rating": '4.2'
-                                                        }
-                                                      } }), headers: {})
 
       within '#pg-23' do
         click_link 'Fehringer'

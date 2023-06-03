@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe PlaygroundsService do
   it 'establishes connection for playgrounds in area' do
-    stubbed_response = File.read('spec/fixtures/playbrounds_data.json')
+    stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
     stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/1600')
     .to_return(status: 200, body: stubbed_response)
 
