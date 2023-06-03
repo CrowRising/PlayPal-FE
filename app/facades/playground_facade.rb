@@ -1,11 +1,12 @@
-class PlaygroundFacade
+# frozen_string_literal: true
 
+class PlaygroundFacade
   def initialize(id)
     @id = id
   end
 
   def playground
-    @_playground ||= Playground.new(playground_data)
+    @playground ||= Playground.new(playground_data)
   end
 
   def playground_id
@@ -25,11 +26,10 @@ class PlaygroundFacade
   end
 
   def review
-    @_review ||= review_data.map do |review|
-       Review.new(review)
+    @review ||= review_data.map do |review|
+      Review.new(review)
     end
   end
-
 
   private
 
@@ -38,10 +38,10 @@ class PlaygroundFacade
   end
 
   def playground_data
-    @_playground_data ||= service.get_playground(@id)[:data]
+    @playground_data ||= service.get_playground(@id)[:data]
   end
 
   def review_data
-    @_review_data ||= service.get_reviews(@id)[:data]
+    @review_data ||= service.get_reviews(@id)[:data]
   end
 end
