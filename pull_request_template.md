@@ -1,6 +1,6 @@
 Describe PR: 
 
-Neccesary checkmarks:
+Necessary checkmarks:
 
     [] All Tests are Passing
     [] The code will run locally

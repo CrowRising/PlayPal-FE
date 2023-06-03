@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Playground
   attr_reader :id, :name, :address, :rating
 
