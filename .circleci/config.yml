@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.4.0
+jobs:
+  build:
+    working_directory: ~/play_pal_fe
+    docker:
+      - image: cimg/ruby:3.1.1
+        environment:
+          PGHOST: localhost
+          PGUSER: play_pal_fe
+          RAILS_ENV: test
+      - image: postgres:13.2
+        environment:
+          POSTGRES_USER: play_pal_fe
+          POSTGRES_DB: play_pal_fe_test
+          POSTGRES_PASSWORD:
+    executor: ruby/default
+    steps:
+      - checkout
+      - run:
+          name: play_pal_fe
+          command: bundle -v
+      - checkout
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rspec
