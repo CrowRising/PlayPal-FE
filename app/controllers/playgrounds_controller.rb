@@ -11,6 +11,6 @@ class PlaygroundsController < ApplicationController
   end
 
   def show
-    
+    @facade = PlaygroundFacade.new(params[:id])
   end
 end
