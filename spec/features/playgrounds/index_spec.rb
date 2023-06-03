@@ -19,7 +19,7 @@ RSpec.describe '/playgrounds#index', type: :feature do
                                                       "attributes": {
                                                         "playground_name": 'Fehringer',
                                                         "playground_address": '1400 U Street',
-                                                        "average_rating": '2.5'
+                                                        "rating": '2.5'
                                                       }
                                                     },
                                                     {
@@ -28,7 +28,7 @@ RSpec.describe '/playgrounds#index', type: :feature do
                                                       "attributes": {
                                                         "playground_name": 'Birds Nest',
                                                         "playground_address": '1700 U Street',
-                                                        "average_rating": '2.7'
+                                                        "rating": '2.7'
                                                       }
                                                     }
                                                   ]), headers: {})
