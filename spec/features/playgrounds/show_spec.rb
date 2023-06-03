@@ -4,25 +4,15 @@ require 'rails_helper'
 
 RSpec.describe '/playgrounds#show' do
   before(:each) do
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/2')
-      .with(
-        headers: {
-          'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent' => 'Faraday v2.7.5'
-        }
-      )
-      .to_return(status: 200, body: JSON.generate({ "data":
-                                                    {
-                                                      "id": '2',
-                                                      "type": 'playground',
-                                                      "attributes": {
-                                                        "playground_name": 'Fehringer',
-                                                        "playground_address": 'Full address',
-                                                        "rating": '4.2'
-                                                      }
-                                                    } }), headers: {})
-    visit '/playgrounds/2'
+    stubbed_response = File.read('spec/fixtures/playground_24_data.json')
+    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24')
+    .to_return(status: 200, body: stubbed_response)
+    
+    stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+      .to_return(status: 200, body: stubbed_response)
+    
+      visit 'playgrounds/24'
   end
 
   describe 'Playground Show Page' do
