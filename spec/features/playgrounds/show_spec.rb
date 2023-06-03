@@ -36,14 +36,16 @@ RSpec.describe '/playgrounds#show' do
       expect(page).to have_content('img')
     end
 
-    xit 'displays links to home and user dashboards' do
+    it 'displays links to home and user dashboards' do
       expect(page).to have_link('Home')
       expect(page).to_not have_link('Dashboard')
     end
 
     xit 'displays button to add playground to favorites' do
 
+      expect(page).to have_button('This place rules!')
 
+      click
     end
   end
 end
