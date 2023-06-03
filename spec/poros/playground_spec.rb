@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Playground do
@@ -18,6 +20,5 @@ RSpec.describe Playground do
     expect(playground.name).to eq('Fehringer')
     expect(playground.address).to eq('123 st')
     expect(playground.rating).to eq('2.6')
-
   end
 end
