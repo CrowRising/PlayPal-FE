@@ -83,6 +83,40 @@ RSpec.describe PlaygroundsService do
     expect(playground[:data][:attributes]).to have_key(:playground_address)
     expect(playground[:data][:attributes]).to have_key(:rating)
   end
+
+  it 'can get reviews for specific playground' do
+    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+      .with(
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Faraday v2.7.5'
+        }
+      )
+      .to_return(status: 200, body: JSON.generate({ "data": [
+                                                  {
+                                                    "id": "322458",
+                                                    "type": "review",
+                                                    "attributes": {
+                                                        "comment": "comment",
+                                                        "user_id": "12",
+                                                        "rating": "4.2",
+                                                        "image": "image",
+                                                        "playground_id": "24"
+                                                     }
+                                                   }
+                                                ] }), headers: {})
+                                      
+    playground = PlaygroundsService.new.get_reviews(24)   
+    expect(playground[:data]).to be_an Array
+    
+    expect(playground[:data].first[:attributes]).to have_key(:comment)
+    expect(playground[:data].first[:attributes]).to have_key(:user_id)
+    expect(playground[:data].first[:attributes]).to have_key(:rating)
+    expect(playground[:data].first[:attributes]).to have_key(:image)
+    expect(playground[:data].first[:attributes]).to have_key(:playground_id)
+                                         
+  end
 end
 
 # if time permits add testing to check key value returns
