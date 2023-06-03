@@ -9,6 +9,17 @@
       "image": "image",
       "playground_id": "24"
     }
+  },
+  {
+    "id": "5",
+    "type": "review",
+    "attributes": {
+      "comment": "this park is great!",
+      "user_id": "13",
+      "rating": "4.1",
+      "image": "image",
+      "playground_id": "24"
+    }
   }
 ] 
 }
