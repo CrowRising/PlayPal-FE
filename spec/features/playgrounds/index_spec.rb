@@ -12,6 +12,10 @@ RSpec.describe '/playgrounds#index', type: :feature do
     stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23')
     .to_return(status: 200, body: stubbed_response)
 
+    stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
+    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23/reviews')
+    .to_return(status: 200, body: stubbed_response)
+
     
     visit root_path
     fill_in 'location', with: '123 st'
@@ -47,7 +51,9 @@ RSpec.describe '/playgrounds#index', type: :feature do
     end
 
     it 'when link is clicked it takes user to playground show page' do
-
+      @user = create(:user, id: 12)
+      @user2 = create(:user, id: 13)
+      
       within '#pg-23' do
         click_link 'Fehringer'
       end
