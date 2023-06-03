@@ -18,6 +18,6 @@ class Review
   end
 
   def user_name
-    User.find(@user_id).name
+    User.find(@user_id)
   end
 end
