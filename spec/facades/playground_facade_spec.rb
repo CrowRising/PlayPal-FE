@@ -3,26 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe PlaygroundFacade do
+  before(:each) do
+    stubbed_response = File.read('spec/fixtures/playground_2_data.json')
+    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/2')
+    .to_return(status: 200, body: stubbed_response)
+
+    stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+      .to_return(status: 200, body: stubbed_response)
+
+  end
   describe 'Playground Facade' do
     it 'exists and can create a single playground object' do
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/2')
-        .with(
-          headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent' => 'Faraday v2.7.5'
-          }
-        )
-        .to_return(status: 200, body: JSON.generate({ "data":
-                                                    {
-                                                      "id": '2',
-                                                      "type": 'playground',
-                                                      "attributes": {
-                                                        "playground_name": 'Fehringer',
-                                                        "playground_address": 'Full address',
-                                                        "rating": '4.2'
-                                                      }
-                                                    } }), headers: {})
       pg = PlaygroundFacade.new('2')
 
       expect(pg).to be_a PlaygroundFacade
@@ -33,29 +25,7 @@ RSpec.describe PlaygroundFacade do
       expect(pg.playground_rating).to eq('4.2')
     end
 
-    it 'can get reviews for single playground' do
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
-        .with(
-          headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent' => 'Faraday v2.7.5'
-          }
-        )
-        .to_return(status: 200, body: JSON.generate({ "data": [
-                                                      {
-                                                        "id": '322458',
-                                                        "type": 'review',
-                                                        "attributes": {
-                                                          "comment": 'comment',
-                                                          "user_id": '12',
-                                                          "rating": '4.2',
-                                                          "image": 'image',
-                                                          "playground_id": '24'
-                                                        }
-                                                      }
-                                                    ] }), headers: {})
-
+    it 'can get reviews for single playground' d
       pg = PlaygroundFacade.new('24').review
 
       expect(pg).to be_an Array

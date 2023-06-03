@@ -1,0 +1,14 @@
+{ "data": [
+  {
+    "id": "322458",
+    "type": "review",
+    "attributes": {
+      "comment": "comment",
+      "user_id": "12",
+      "rating": "4.2",
+      "image": "image",
+      "playground_id": "24"
+    }
+  }
+] 
+}
