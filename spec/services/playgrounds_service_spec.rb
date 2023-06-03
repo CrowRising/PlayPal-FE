@@ -60,18 +60,17 @@ RSpec.describe PlaygroundsService do
           'User-Agent' => 'Faraday v2.7.5'
         }
       )
-      .to_return(status: 200, body: JSON.generate({ "data": 
+      .to_return(status: 200, body: JSON.generate({ "data":
                                                     {
-                                                      "id": "322474",
-                                                      "type": "review",
+                                                      "id": '322474',
+                                                      "type": 'review',
                                                       "attributes": {
-                                                          "playground_id": "2",
-                                                          "playground_name": "Fehringer",
-                                                          "playground_address": "Full address",
-                                                          "rating": "4.2"
-                                                       }
-                                                     }
-                                                  } ), headers: {})
+                                                        "playground_id": '2',
+                                                        "playground_name": 'Fehringer',
+                                                        "playground_address": 'Full address',
+                                                        "rating": '4.2'
+                                                      }
+                                                    } }), headers: {})
 
     playground = PlaygroundsService.new.get_playground(2)
     expect(playground).to be_a Hash
@@ -94,28 +93,27 @@ RSpec.describe PlaygroundsService do
         }
       )
       .to_return(status: 200, body: JSON.generate({ "data": [
-                                                  {
-                                                    "id": "322458",
-                                                    "type": "review",
-                                                    "attributes": {
-                                                        "comment": "comment",
-                                                        "user_id": "12",
-                                                        "rating": "4.2",
-                                                        "image": "image",
-                                                        "playground_id": "24"
-                                                     }
-                                                   }
-                                                ] }), headers: {})
-                                      
-    playground = PlaygroundsService.new.get_reviews(24)   
+                                                    {
+                                                      "id": '322458',
+                                                      "type": 'review',
+                                                      "attributes": {
+                                                        "comment": 'comment',
+                                                        "user_id": '12',
+                                                        "rating": '4.2',
+                                                        "image": 'image',
+                                                        "playground_id": '24'
+                                                      }
+                                                    }
+                                                  ] }), headers: {})
+
+    playground = PlaygroundsService.new.get_reviews(24)
     expect(playground[:data]).to be_an Array
-    
+
     expect(playground[:data].first[:attributes]).to have_key(:comment)
     expect(playground[:data].first[:attributes]).to have_key(:user_id)
     expect(playground[:data].first[:attributes]).to have_key(:rating)
     expect(playground[:data].first[:attributes]).to have_key(:image)
     expect(playground[:data].first[:attributes]).to have_key(:playground_id)
-                                         
   end
 end
 
