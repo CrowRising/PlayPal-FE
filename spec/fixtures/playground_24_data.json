@@ -1,0 +1,11 @@
+{ "data":
+  {
+    "id": "24",
+    "type": "playground",
+    "attributes": {
+      "playground_name": "Fehringer",
+      "playground_address": "Full address",
+      "rating": "4.2"
+      }
+  } 
+}

@@ -13,4 +13,12 @@ class PlaygroundsService
   def get_playgrounds(location, radius)
     get_url("/api/v0/playgrounds/#{location}/#{radius}")
   end
+
+  def get_playground(id)
+    get_url("/api/v0/playgrounds/#{id}")
+  end
+
+  def get_reviews(id)
+    get_url("/api/v0/playgrounds/#{id}/reviews")
+  end
 end

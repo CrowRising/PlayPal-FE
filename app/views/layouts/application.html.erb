@@ -15,7 +15,7 @@
     <p><%= message %></p>
     <% end %>
     <%= link_to 'Home', root_path %>
-    <% if session[:user_id] %>
+    <% if current_user %>
       <%= link_to 'Dashboard', dashboard_path %>
     <% end %>
       <%= yield %>

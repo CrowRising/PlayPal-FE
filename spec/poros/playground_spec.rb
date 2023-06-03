@@ -9,7 +9,7 @@ RSpec.describe Playground do
       attributes: {
         playground_name: 'Fehringer',
         playground_address: '123 st',
-        average_rating: '2.6'
+        rating: '2.6'
       }
     }
 

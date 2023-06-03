@@ -9,4 +9,8 @@ class PlaygroundsController < ApplicationController
       flash[:error] = 'Error: Must add location!'
     end
   end
+
+  def show
+    @facade = PlaygroundFacade.new(params[:id])
+  end
 end

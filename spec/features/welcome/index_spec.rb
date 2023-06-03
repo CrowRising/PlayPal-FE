@@ -82,7 +82,17 @@ RSpec.describe '/welcome#index', type: :feature do
   end
 
   describe 'Discover Playgrounds' do
+    before(:each) do
+      stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/1600')
+      .to_return(status: 200, body: stubbed_response)
+
+      stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/0')
+      .to_return(status: 200, body: stubbed_response)
+    end
     it 'can fill in location and radius to discover playground' do
+
       fill_in 'location', with: '90210'
       fill_in 'radius', with: '1'
       click_button 'Discover Playgrounds'
@@ -91,6 +101,7 @@ RSpec.describe '/welcome#index', type: :feature do
     end
 
     it 'can fill just location to discover playground' do
+     
       fill_in 'location', with: '90210'
       click_button 'Discover Playgrounds'
 
