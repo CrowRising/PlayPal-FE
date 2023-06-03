@@ -12,20 +12,16 @@ RSpec.describe '/playgrounds#show' do
       )
       .to_return(status: 200, body: JSON.generate({ "data": 
                                                     {
-                                                      "id": "322474",
-                                                      "type": "review",
+                                                      "id": "2",
+                                                      "type": "playground",
                                                       "attributes": {
-                                                          "playground_id:": "2",
                                                           "playground_name": "Fehringer",
                                                           "playground_address": "Full address",
                                                           "rating": "4.2"
-                                                       }
-                                                     }
+                                                      }
+                                                    }
                                                   } ), headers: {})
     visit '/playgrounds/2'
-    # fill_in 'location', with: 'Full address'
-    # fill_in 'radius', with: '1'
-    # click_button 'Discover Playgrounds'
   end
 
   describe 'Playground Show Page' do
@@ -33,7 +29,7 @@ RSpec.describe '/playgrounds#show' do
 
       expect(page).to have_content('Fehringer')
       expect(page).to have_content('Full address')
-      expect(page).to have_content('Rating')
+      expect(page).to have_content('Rating: 4.2')
     end
 
     xit 'displays a static satalite image of playground' do
