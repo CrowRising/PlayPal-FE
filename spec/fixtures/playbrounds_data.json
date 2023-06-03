@@ -1,0 +1,21 @@
+{ "data": [
+  {
+    "type": "playground",
+    "id": "23",
+    "attributes": {
+      "playground_name": "Fehringer",
+      "playground_address": "1400 U Street ",
+      "rating": "2.5"
+    }
+  },
+  {
+    "type": "playground",
+    "id": "23",
+    "attributes": {
+      "playground_name": "Birds Nest",
+      "playground_address": "1700 U Street",
+      "rating": "2.7"
+    }
+  }
+]
+}
