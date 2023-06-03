@@ -7,6 +7,6 @@ class Playground
     @id = data[:id]
     @name = data[:attributes][:playground_name]
     @address = data[:attributes][:playground_address]
-    @rating = data[:attributes][:average_rating]
+    @rating = data[:attributes][:rating]
   end
 end

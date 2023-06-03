@@ -21,7 +21,7 @@ RSpec.describe PlaygroundsService do
                                                       "attributes": {
                                                         "playground_name": 'Fehringer',
                                                         "playground_address": '1400 U Street ',
-                                                        "average_rating": '2.5'
+                                                        "rating": '2.5'
                                                       }
                                                     },
                                                     {
@@ -30,7 +30,7 @@ RSpec.describe PlaygroundsService do
                                                       "attributes": {
                                                         "playground_name": 'Birds Nest',
                                                         "playground_address": '1700 U Street',
-                                                        "average_rating": '2.7'
+                                                        "rating": '2.7'
                                                       }
                                                     }
                                                   ]), headers: {})
@@ -47,7 +47,7 @@ RSpec.describe PlaygroundsService do
       expect(pg).to have_key(:attributes)
       expect(pg[:attributes]).to have_key(:playground_name)
       expect(pg[:attributes]).to have_key(:playground_address)
-      expect(pg[:attributes]).to have_key(:average_rating)
+      expect(pg[:attributes]).to have_key(:rating)
     end
   end
 end
