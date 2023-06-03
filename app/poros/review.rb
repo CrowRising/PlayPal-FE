@@ -16,4 +16,8 @@ class Review
     @image = data[:attributes][:image]
     @playground_id = data[:attributes][:playground_id]
   end
+
+  def user_name
+    User.find(@user_id).name
+  end
 end
