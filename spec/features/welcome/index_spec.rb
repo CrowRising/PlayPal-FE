@@ -82,35 +82,16 @@ RSpec.describe '/welcome#index', type: :feature do
   end
 
   describe 'Discover Playgrounds' do
+    before(:each) do
+      stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/1600')
+      .to_return(status: 200, body: stubbed_response)
+
+      stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
+      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/0')
+      .to_return(status: 200, body: stubbed_response)
+    end
     it 'can fill in location and radius to discover playground' do
-      stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/1600").
-        with(
-          headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent'=>'Faraday v2.7.5'
-          }
-        )
-       .to_return(status: 200, body: JSON.generate("data": [
-                                                    {
-                                                      "type": 'playground',
-                                                      "id": '23',
-                                                      "attributes": {
-                                                        "playground_name": 'Fehringer',
-                                                        "playground_address": '1400 U Street',
-                                                        "rating": '2.5'
-                                                      }
-                                                    },
-                                                    {
-                                                      "type": 'playground',
-                                                      "id": '24',
-                                                      "attributes": {
-                                                        "playground_name": 'Birds Nest',
-                                                        "playground_address": '1700 U Street',
-                                                        "rating": '2.7'
-                                                      }
-                                                    }
-                                                  ]), headers: {})
 
       fill_in 'location', with: '90210'
       fill_in 'radius', with: '1'
@@ -120,35 +101,7 @@ RSpec.describe '/welcome#index', type: :feature do
     end
 
     it 'can fill just location to discover playground' do
-      stub_request(:get, "http://localhost:3000/api/v0/playgrounds/90210/0").
-        with(
-          headers: {
-            'Accept'=>'*/*',
-            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Faraday v2.7.5'
-          }
-        )
-          .to_return(status: 200, body: JSON.generate("data": [
-                                                      {
-                                                        "type": 'playground',
-                                                        "id": '23',
-                                                        "attributes": {
-                                                          "playground_name": 'Fehringer',
-                                                          "playground_address": '1400 U Street',
-                                                          "rating": '2.5'
-                                                        }
-                                                      },
-                                                      {
-                                                        "type": 'playground',
-                                                        "id": '24',
-                                                        "attributes": {
-                                                          "playground_name": 'Birds Nest',
-                                                          "playground_address": '1700 U Street',
-                                                          "rating": '2.7'
-                                                        }
-                                                      }
-                                                    ]), headers: {})
-
+     
       fill_in 'location', with: '90210'
       click_button 'Discover Playgrounds'
 
