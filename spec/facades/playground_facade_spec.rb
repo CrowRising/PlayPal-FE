@@ -19,14 +19,14 @@ RSpec.describe PlaygroundFacade do
 
       expect(pg).to be_a PlaygroundFacade
       expect(pg.playground).to be_a Playground
-      expect(pg.playground_id).to eq('2')
+      expect(pg.id).to eq('2')
       expect(pg.playground_name).to eq('Fehringer')
       expect(pg.playground_address).to eq('Full address')
       expect(pg.playground_rating).to eq('4.2')
     end
 
     it 'can get reviews for single playground' do
-      pg = PlaygroundFacade.new('24').review
+      pg = PlaygroundFacade.new('24').reviews
 
       expect(pg).to be_an Array
       expect(pg.first.id).to eq('322458')
