@@ -1,16 +1,13 @@
 # frozen_string_literal: true
 
 class PlaygroundFacade
+  attr_reader :id
   def initialize(id)
     @id = id
   end
 
   def playground
     @playground ||= Playground.new(playground_data)
-  end
-
-  def playground_id
-    playground.id
   end
 
   def playground_name
@@ -25,7 +22,7 @@ class PlaygroundFacade
     playground.rating
   end
 
-  def review
+  def reviews
     @review ||= review_data.map do |review|
       Review.new(review)
     end
