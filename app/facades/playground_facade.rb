@@ -3,7 +3,7 @@
 class PlaygroundFacade
   attr_reader :id
   def initialize(id)
-    @id = id
+    @id = id #This is a playground id
   end
 
   def playground
