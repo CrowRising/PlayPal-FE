@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get '/playgrounds', to: 'playgrounds#index'
   get '/playgrounds/:id', to: 'playgrounds#show'
+  post '/add_to_favorites', to: 'playgrounds/favorites#create'
 end
