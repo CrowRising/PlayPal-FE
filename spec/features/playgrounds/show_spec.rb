@@ -70,12 +70,36 @@ RSpec.describe '/playgrounds#show' do
       click_link('Login With Google')
       visit 'playgrounds/24'
 
-      expect(page).to have_link('This Place Rules!')
+      expect(page).to have_button('This Place Rules!')
     end
 
     it 'does not show the this place rules button if not logged in' do
       visit 'playgrounds/24'
-      expect(page).to_not have_link('This Place Rules!')
+
+      expect(page).to_not have_button('This Place Rules!')
+    end
+
+    it 'When logged in and I click on this place rules I see a message that says the park has been added to favorites' do
+      user = create(:user, id: 500, google_id: '123456789')
+      
+      stub_request(:post, "http://localhost:3000/api/v0/users/favorites").
+         with(
+           body: {"user_playgrounds"=>{"playground_id"=>"24", "playground_name"=>"Fehringer", "user_id"=>"500"}},
+           headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Content-Type'=>'application/x-www-form-urlencoded',
+          'User-Agent'=>'Faraday v2.7.5'
+           }).
+         to_return(status: 200, body: "", headers: {})
+      
+      visit root_path
+      click_link('Login With Google')
+      visit '/playgrounds/24'
+      click_button('This Place Rules!')
+
+      expect(current_path).to eq('/playgrounds/24')
+      expect(page).to have_content('This playground was added to your favorites')
     end
   end
 end
