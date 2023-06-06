@@ -29,4 +29,31 @@ RSpec.describe '/reviews#new' do
 
     expect(current_path).to eq('/playgrounds/24')
   end
+
+  it 'will not let you submit if an image is not uploaded' do
+    fill_in 'Rating:', with: 5
+    fill_in 'Review:', with: 'This playground is awesome!'
+    click_button 'Tell em!'
+
+    expect(current_path).to eq(new_playground_review_path(24))
+    expect(page).to have_content('All fields must be filled out.')
+  end
+
+  it 'will not let you submit if a rating is not present' do
+    fill_in 'Review:', with: 'This playground is awesome!'
+    attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
+    click_button 'Tell em!'
+
+    expect(current_path).to eq(new_playground_review_path(24))
+    expect(page).to have_content('All fields must be filled out.')
+  end
+
+  it 'will not let you submit if a comment is not written' do
+    fill_in 'Rating:', with: 5
+    attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
+    click_button 'Tell em!'
+
+    expect(current_path).to eq(new_playground_review_path(24))
+    expect(page).to have_content('All fields must be filled out.')
+  end
 end
