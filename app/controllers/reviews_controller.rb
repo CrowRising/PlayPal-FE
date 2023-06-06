@@ -1,22 +1,26 @@
 class ReviewsController < ApplicationController
-  def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
+  def new
+    @facade = PlaygroundFacade.new(params[:id])
+    @review = Review.new
+  end
 
+  def create
+    @facade = PlaygroundFacade.new(params[:id])
+    @playground = @facade.playground
+    @review = @playground.reviews.new(review_params)
+    @review.user = current_user
+  
     if @review.save
-      # Handle successful review submission
-      redirect_to playground_path(@review.playground_id), notice: 'Review was successfully submitted.'
+      redirect_to @playground, notice: 'Review was successfully created.'
     else
-      # Handle review submission errors
       render :new
     end
   end
-
-  private
+  
 
   private
 
   def review_params
-    params.require(:review).permit(:rating, :comment, :image, :playground_id)
+    params.require(:review).permit(:rating, :comment, :image)
   end
 end
