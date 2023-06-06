@@ -8,6 +8,7 @@
   <div id='review_<%= review.id %>'>
   <li><p><b>Author: </b><%= review.user_name %>  <b>Rating: </b><%= review.rating %><p></li>
   <p><b>Review: </b><%= review.comment %></p>
+  <p><%= image_tag review.image %>
   </div>
   <br>
 <% end %>
