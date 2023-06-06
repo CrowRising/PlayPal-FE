@@ -1,0 +1,16 @@
+<h1>PlayPal Review</h1>
+
+<%= form_with model: @review, url: '/add_review', method: :post, local: true do |f| %>
+  <%= f.label :rating, 'Rating:' %>
+  <%= f.number_field :rating %>
+  <br><br>
+  <%= f.label :comment, 'Review:', step: 0.5 %>
+  <%= f.text_field :comment %>
+  <br><br>
+  <%= f.label :image, 'Upload Image:', step: 0.5 %>
+  <%= f.file_field :image %>
+  <br><br>
+  <%= f.hidden_field :playground_id, value: @review.playground_id %>
+  <%= f.submit 'Tell em!' %>
+<% end %>
+
