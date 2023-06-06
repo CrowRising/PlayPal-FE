@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/playgrounds#show' do
   before(:each) do
+    
     @user1 = create(:user, id: 500, google_id: '123456789')
 
     stubbed_response = File.read('spec/fixtures/playground_24_data.json')
@@ -26,9 +27,16 @@ RSpec.describe '/playgrounds#show' do
       expect(page).to have_content('Rating: 4.2')
     end
 
-    xit 'displays a static satalite image of playground' do
+    it 'displays an image of the playground and review image' do
       visit 'playgrounds/24'
-      expect(page).to have_content('img')
+
+      within "#review_322458" do
+        expect(page).to have_css('img')
+      end
+
+      within "#image" do
+        expect(page).to have_css('img')
+      end
     end
 
     it 'displays links to home and user dashboards' do
@@ -52,6 +60,24 @@ RSpec.describe '/playgrounds#show' do
         expect(page).to have_content("Rating: 4.1")
       end
 
+    end
+
+    it 'displays a link to add a new review' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      
+      visit 'playgrounds/24'
+
+      expect(page).to have_link("Add Your Two Cents!")
+    end
+
+    it 'when I click on add a review I am taken to a new review form' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      
+      visit 'playgrounds/24'
+
+      click_link("Add Your Two Cents!")
+
+      expect(current_path).to eq(new_playground_review_path(24))
     end
 
     it 'displays link to add playground to favorites' do

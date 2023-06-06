@@ -6,7 +6,7 @@
       "comment": "comment",
       "user_id": "2",
       "rating": "4.2",
-      "image": "image",
+      "image": "https://playgroundimage.s3.us-west-1.amazonaws.com/test_image.jpg",
       "playground_id": "24"
     }
   },
@@ -17,7 +17,7 @@
       "comment": "this park is great!",
       "user_id": "2",
       "rating": "4.1",
-      "image": "image",
+      "image": "https://playgroundimage.s3.us-west-1.amazonaws.com/test_image.jpg",
       "playground_id": "24"
     }
   }
