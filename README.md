@@ -17,15 +17,11 @@ PlayPal is a playground and park finder app. Designed for parents looking for ne
   - Rails 7.0.4
   - Ruby 3.1.1
 
-## Getting Started
+## <b>Getting Started</b>
 
-## Usage
+To get a local copy, follow these simple instructions
 
-## Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+### <b>Installation</b>
 
 1. Fork the Project
 2. Clone the repo 
@@ -54,6 +50,12 @@ git commit -m 'Add some AmazingFeature'
 git push origin feature/AmazingFeature
 ```
 8. Open a Pull Request
+
+## Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
 ## Authors
 - Thomas Hawley [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/thawley2)  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/thomas-hawley-901612123/)
