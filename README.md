@@ -1,7 +1,7 @@
 [![Contributors](https://img.shields.io/github/contributors/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/forks)
 [![Stargazers](https://img.shields.io/github/stars/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/stargazers)
-[![Issues][issues-shield]][issues-url]
+[![Issues](https://img.shields.io/github/issues/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/issues)
 
 # PlayPal
 
@@ -72,5 +72,5 @@ Don't forget to give the project a star! Thanks again!
 - Logan Wilson [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ]( https://github.com/Bluedevil667) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/logan-wilson-28422ba0/)
 
 ## Planning Tools
-- [Miro Board](https://miro.com/app/board/uXjVMDHct-E=/)
+- [![Miro Board](https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white)](https://miro.com/app/board/uXjVMDHct-E=/)
 - [GitHub Project Board](https://github.com/users/CrowRising/projects/5)
