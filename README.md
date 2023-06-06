@@ -34,10 +34,10 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 ## Authors
-- Thomas Hawley |[GitHub](https://github.com/thawley2)| |[LinkedIn](https://www.linkedin.com/in/thomas-hawley-901612123/)|
-- Reilly Miller |[GitHub](https://github.com/rmiller220)| |[LinkedIn](https://www.linkedin.com/in/reilly-miller-6b6131266/)|
-- Crow Rising |[GitHub](https://github.com/CrowRising)| |[LinkedIn](https://www.linkedin.com/in/crowrising/)|
-- Logan Wilson |[GitHub]( https://github.com/Bluedevil667)| |[LinkedIn](https://www.linkedin.com/in/logan-wilson-28422ba0/)|
+- Thomas Hawley |[GitHub](https://github.com/thawley2)| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/thomas-hawley-901612123/)
+- Reilly Miller |[GitHub](https://github.com/rmiller220)| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/reilly-miller-6b6131266/)
+- Crow Rising |[GitHub](https://github.com/CrowRising)| |[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/crowrising/)
+- Logan Wilson |[GitHub]( https://github.com/Bluedevil667)| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/logan-wilson-28422ba0/)
 
 ## Planning Tools
 - [Miro Board](https://miro.com/app/board/uXjVMDHct-E=/)
