@@ -1,0 +1,25 @@
+{ "data": [
+  {
+    "id": "322458",
+    "type": "review",
+    "attributes": {
+      "comment": "comment",
+      "user_id": "2",
+      "rating": "4.2",
+      "image": "image",
+      "playground_id": "24"
+    }
+  },
+  {
+    "id": "5",
+    "type": "review",
+    "attributes": {
+      "comment": "this park is great!",
+      "user_id": "2",
+      "rating": "4.1",
+      "image": "image",
+      "playground_id": "24"
+    }
+  }
+] 
+}

@@ -3,9 +3,9 @@ class FavoritesFacade
     @user_id = user_id
   end
 
-  def playgrounds
-    @playgrounds ||= favorites_data.map do |pg|
-      Playground.new(pg)
+  def favorites
+    @favorites ||= favorites_data.map do |favorite|
+      Favorite.new(favorite)
     end
   end
 

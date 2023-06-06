@@ -8,15 +8,13 @@ RSpec.describe FavoritesFacade do
   end
   describe 'instance methods' do
     it "favorites_data" do
-      @favorites = FavoritesFacade.new(2).playgrounds
+      @favorites = FavoritesFacade.new(2).favorites
       expect(@favorites).to be_an Array
-      expect(@favorites.first).to be_a Playground
+      expect(@favorites.first).to be_a Favorite
       @favorites.each do |favorite|
-        expect(favorite).to be_a Playground
-        expect(favorite.id).to be_a String
-        expect(favorite.name).to be_a String
-        expect(favorite.rating).to be(nil)
-        expect(favorite.image).to be(nil)  
+        expect(favorite).to be_a Favorite
+        expect(favorite.playground_id).to be_a String
+        expect(favorite.playground_name).to be_a String
       end
     end
   end
