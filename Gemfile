@@ -80,6 +80,6 @@ group :development do
 end
 
 group :test do
-  # gem 'vcr'
+  gem 'vcr'
   gem 'webmock'
 end

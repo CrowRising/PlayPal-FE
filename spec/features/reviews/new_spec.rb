@@ -21,12 +21,12 @@ RSpec.describe '/reviews#new' do
     expect(page).to have_button('Tell em!')
   end
 
-  it 'can create a new review' do
+  it 'can create a new review', :vcr do
     fill_in 'Rating:', with: 5
     fill_in 'Review:', with: 'This playground is awesome!'
     attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
     click_button 'Tell em!'
 
-    expect(current_path).to eq(playground_path(24))
+    expect(current_path).to eq('/playgrounds/24')
   end
 end
