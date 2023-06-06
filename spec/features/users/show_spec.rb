@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'As a registered user' do
   describe 'when I visit my dashboard' do
     before(:each) do
+      @user1 = create(:user, id: 2, google_id: '123456789')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
-      @user1 = User.create!(id: 2, google_id: '123456789')
     #   OmniAuth.config.test_mode = true
     #   OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
     #   provider: 'google_oauth2',
@@ -39,8 +39,9 @@ RSpec.describe 'As a registered user' do
 
     xit "I see a search bar to search for playgrounds" do
       visit dashboard_path
-      save_and_open_page
+
       expect(page).to have_field(:location)
+      expect(page).to have_field(:radius)
       fill_in 'location', with: '123 st'
       fill_in 'radius', with: '1'
       click_button 'Discover Playgrounds'
@@ -59,10 +60,11 @@ RSpec.describe 'As a registered user' do
         expect(page).to have_content('Rating: 2.7')
       end
     end
+    
     it "I see a list of all my favorite playgrounds" do
-      visit dashboard_path(@user1)
-      save_and_open_page
-      expect(page).to have_content("Welcome to PlayPal, Test User")
+      visit dashboard_path
+      
+      expect(page).to have_content("Welcome to PlayPal, #{@user1.name}")
       expect(page).to have_content("My Favorite Playgrounds")
 
       within '#pg-5' do
