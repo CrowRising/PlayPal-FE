@@ -70,10 +70,13 @@ RSpec.describe 'As a registered user' do
         click_link 'Lehigh Park'
         expect(current_path).to eq('/playgrounds/5')
       end
+      
+      visit dashboard_path
+
       within '#pg-10' do
         expect(page).to have_link('City Park')
-        # click_link 'City Park'
-        # expect(current_path).to eq('/playgrounds/10')
+        click_link 'City Park'
+        expect(current_path).to eq('/playgrounds/10')
       end
     end
   end
