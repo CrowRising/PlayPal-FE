@@ -1,3 +1,8 @@
+[![Contributors](https://img.shields.io/github/contributors/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/forks)
+[![Stargazers](https://img.shields.io/github/stars/CrowRising/PlayPal-FE.svg)](https://github.com/CrowRising/PlayPal-FE/stargazers)
+[![Issues][issues-shield]][issues-url]
+
 # PlayPal
 
 ## About This Project
