@@ -53,6 +53,21 @@ RSpec.describe PlaygroundsService do
     expect(playground[:data].first[:attributes]).to have_key(:image)
     expect(playground[:data].first[:attributes]).to have_key(:playground_id)
   end
+
+    it 'can get favorites for specific user' do
+        stubbed_response = File.read('spec/fixtures/favorites_data.json')
+        stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
+        .to_return(status: 200, body: stubbed_response)
+    
+        favorites = PlaygroundsService.new.get_favorites(2)
+    
+        expect(favorites).to be_a Hash
+        expect(favorites[:data]).to be_an Array
+        expect(favorites[:data].first[:attributes]).to have_key(:playground_name)
+        expect(favorites[:data].first[:attributes][:playground_name]).to eq('Lehigh Park')
+        expect(favorites[:data].first[:attributes]).to have_key(:playground_id)
+        expect(favorites[:data].first[:attributes][:playground_id]).to eq(5)
+      end
 end
 
 # if time permits add testing to check key value returns

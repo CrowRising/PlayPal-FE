@@ -22,6 +22,10 @@ class PlaygroundFacade
     playground.rating
   end
 
+  def playground_image
+    playground.image
+  end
+
   def reviews
     @review ||= review_data.map do |review|
       Review.new(review)

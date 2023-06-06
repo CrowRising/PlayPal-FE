@@ -17,6 +17,10 @@ class PlaygroundsService
     post_url('/api/v0/users/favorites', user_playgrounds: favorite_data)
   end
 
+  def get_favorites(user_id)
+    get_url("/api/v0/users/#{user_id}/favorites")
+  end
+
   private
   def conn
     Faraday.new(url: 'http://localhost:3000')

@@ -4,18 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/playgrounds#show' do
   before(:each) do
-    OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
-      provider: 'google_oauth2',
-      uid: '123456789',
-      info: {
-        email: 'test@example.com',
-        name: 'Test User'
-      },
-      credentials: {
-        token: 'testtoken'
-      }
-    )
+    @user1 = create(:user, id: 500, google_id: '123456789')
 
     stubbed_response = File.read('spec/fixtures/playground_24_data.json')
     stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24')
@@ -66,8 +55,8 @@ RSpec.describe '/playgrounds#show' do
     end
 
     it 'displays link to add playground to favorites' do
-      visit root_path
-      click_link('Login With Google')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      
       visit 'playgrounds/24'
 
       expect(page).to have_button('This Place Rules!')
@@ -80,7 +69,7 @@ RSpec.describe '/playgrounds#show' do
     end
 
     it 'When logged in and I click on this place rules I see a message that says the park has been added to favorites' do
-      user = create(:user, id: 500, google_id: '123456789')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
       
       stub_request(:post, "http://localhost:3000/api/v0/users/favorites").
          with(
@@ -93,8 +82,6 @@ RSpec.describe '/playgrounds#show' do
            }).
          to_return(status: 200, body: "", headers: {})
       
-      visit root_path
-      click_link('Login With Google')
       visit '/playgrounds/24'
       click_button('This Place Rules!')
 
