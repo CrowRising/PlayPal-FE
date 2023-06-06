@@ -1,1 +1,20 @@
 <h1> Welcome to PlayPal, <%= current_user.name %></h1>
+<%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br><br>
+  <%= f.label :radius, 'Search Mile Radius', step: 0.5 %>
+  <%= f.number_field :radius %>
+  <br><br>
+  <%= f.submit 'Discover Playgrounds' %>
+<% end %>
+
+<h3>My Favorite Playgrounds</h3>
+<ul>
+  <% @facade.each do |playground| %>
+  <div id='pg-<%= playground.id %>'>
+    <li><%= link_to playground.name, "/playgrounds/#{playground.id}" %></li>
+</ul>
+
+    </div>
+  <% end %>
