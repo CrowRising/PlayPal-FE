@@ -11,10 +11,9 @@
 
 <h3>My Favorite Playgrounds</h3>
 <ul>
-  <% @facade.each do |playground| %>
-  <div id='pg-<%= playground.id %>'>
-    <li><%= link_to playground.name, "/playgrounds/#{playground.id}" %></li>
-</ul>
-
+  <% @facade.favorites.each do |favorite| %>
+  <div id='pg-<%= favorite.playground_id %>'>
+    <li><%= link_to favorite.playground_name, "/playgrounds/#{favorite.playground_id}" %></li>
     </div>
   <% end %>
+</ul>
