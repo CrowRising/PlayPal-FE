@@ -4,7 +4,8 @@ require 'rails_helper'
 
 RSpec.describe '/welcome#index', type: :feature do
   before(:each) do
-    # create(:user, id: 2, google_id: '123456789')
+    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      @user1 = User.create!(id: 2, google_id: '123456789')
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
       provider: 'google_oauth2',
@@ -22,6 +23,8 @@ RSpec.describe '/welcome#index', type: :feature do
     stubbed_response = File.read('spec/fixtures/favorites_data.json')
     stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
     .to_return(status: 200, body: stubbed_response)
+     
+      
   end
   describe 'When a user visits the welcome page' do
     it 'They see the welcome to Play Pal header' do
