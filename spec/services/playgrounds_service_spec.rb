@@ -66,7 +66,7 @@ RSpec.describe PlaygroundsService do
         expect(favorites[:data].first[:attributes]).to have_key(:playground_name)
         expect(favorites[:data].first[:attributes][:playground_name]).to eq('Lehigh Park')
         expect(favorites[:data].first[:attributes]).to have_key(:playground_id)
-        expect(favorites[:data].first[:attributes][:playground_id]).to eq(5)
+        expect(favorites[:data].first[:attributes][:playground_id]).to eq('5')
       end
 end
 

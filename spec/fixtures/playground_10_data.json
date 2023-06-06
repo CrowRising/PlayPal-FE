@@ -1,0 +1,12 @@
+{ "data":
+  {
+    "id": "10",
+    "type": "playground",
+    "attributes": {
+      "playground_name": "Fehringer",
+      "playground_address": "Full address",
+      "rating": "4.2",
+      "image": "https://images.unsplash.com/photo-1591993676692-b2cb11c8ba55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTc3MzF8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODU5OTkyNzd8&ixlib=rb-4.0.3&q=80&w=400"
+      }
+  } 
+}
