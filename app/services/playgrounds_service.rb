@@ -14,7 +14,7 @@ class PlaygroundsService
   end
 
   def add_review(review_data)
-    post_url("/api/v0/playgrounds/#{id}/reviews", user_playground_review: review_data)
+    post_url("/api/v0/playgrounds/reviews", reviews: review_data)
   end
 
   def add_favorite(favorite_data)
