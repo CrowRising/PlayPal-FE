@@ -27,9 +27,16 @@ RSpec.describe '/playgrounds#show' do
       expect(page).to have_content('Rating: 4.2')
     end
 
-    xit 'displays a static satalite image of playground' do
+    it 'displays an image of the playground and review image' do
       visit 'playgrounds/24'
-      expect(page).to have_content('img')
+
+      within "#review_322458" do
+        expect(page).to have_css('img')
+      end
+
+      within "#image" do
+        expect(page).to have_css('img')
+      end
     end
 
     it 'displays links to home and user dashboards' do
@@ -60,7 +67,7 @@ RSpec.describe '/playgrounds#show' do
       
       visit 'playgrounds/24'
 
-      expect(page).to have_link('Add a Review')
+      expect(page).to have_link("Add Your Two Cents!")
     end
 
     it 'when I click on add a review I am taken to a new review form' do
@@ -68,7 +75,7 @@ RSpec.describe '/playgrounds#show' do
       
       visit 'playgrounds/24'
 
-      click_link('Add a Review')
+      click_link("Add Your Two Cents!")
 
       expect(current_path).to eq(new_playground_review_path(24))
     end
