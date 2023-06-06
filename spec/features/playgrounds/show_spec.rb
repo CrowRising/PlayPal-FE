@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/playgrounds#show' do
   before(:each) do
+    
     @user1 = create(:user, id: 500, google_id: '123456789')
 
     stubbed_response = File.read('spec/fixtures/playground_24_data.json')
