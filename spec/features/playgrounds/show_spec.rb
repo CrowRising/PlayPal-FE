@@ -55,6 +55,24 @@ RSpec.describe '/playgrounds#show' do
 
     end
 
+    it 'displays a link to add a new review' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      
+      visit 'playgrounds/24'
+
+      expect(page).to have_link('Add a Review')
+    end
+
+    it 'when I click on add a review I am taken to a new review form' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
+      
+      visit 'playgrounds/24'
+
+      click_link('Add a Review')
+
+      expect(current_path).to eq(new_playground_review_path(24))
+    end
+
     it 'displays link to add playground to favorites' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
       
