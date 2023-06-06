@@ -131,7 +131,6 @@ RSpec.describe '/welcome#index', type: :feature do
 
     describe 'Sad Path' do
       it 'visitor who is not logged in, visit dashboard' do
-
         visit dashboard_path
         
         expect(current_path).to eq(root_path)
