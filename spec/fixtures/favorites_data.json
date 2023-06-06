@@ -1,0 +1,19 @@
+{ "data": [
+  {
+    "id": "2",
+    "type": "user_playgrounds",
+    "attributes": {
+      "playground_id": 5,
+      "playground_name": "Lehigh Park"
+      }
+  }, 
+  {
+    "id": "3",
+    "type": "user_playgrounds",
+    "attributes": {
+      "playground_id": 10,
+      "playground_name": "City Park"
+      }
+  } 
+]
+}
