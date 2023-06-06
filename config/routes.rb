@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   post '/add_to_favorites', to: 'playgrounds/favorites#create'
   
   get '/playgrounds/:id/reviews/new', to: 'reviews#new' , as: :new_playground_review
-  post '/playgrounds/reviews', to: 'reviews#create'
+  post '/playgrounds/:id/reviews', to: 'reviews#create'
 end
