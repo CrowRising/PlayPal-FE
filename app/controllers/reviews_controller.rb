@@ -1,20 +1,16 @@
 class ReviewsController < ApplicationController
   def new
-    @facade = PlaygroundFacade.new(params[:id])
-    @review = Review.new
+    if current_user
+    @playground_id = params[:id]
+    else
+      redirect_to playgrounds_path(params[:id])
+    end
   end
 
   def create
-    @facade = PlaygroundFacade.new(params[:id])
-    @playground = @facade.playground
-    @review = @playground.reviews.new(review_params)
-    @review.user = current_user
-  
-    if @review.save
-      redirect_to @playground, notice: 'Review was successfully created.'
-    else
-      render :new
-    end
+    # AWS upload of the image and return the url
+    PlaygroundsService.new.add_review(review_data)
+    redirect_to playground_path(params[:id]), notice: 'Review was successfully created.'
   end
   
 
@@ -22,5 +18,15 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:rating, :comment, :image)
+  end
+
+  def review_data
+    {
+      user_id: params[:user_id],
+      playground_id: params[:id],
+      rating: params[:rating], 
+      # image: url from aws
+      comment: params[:comment]
+    }
   end
 end
