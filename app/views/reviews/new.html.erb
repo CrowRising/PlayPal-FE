@@ -1,6 +1,7 @@
 <h1>PlayPal Review</h1>
 
 <%= form_with url: "/playgrounds/#{@playground_id}/reviews", method: :post, local: true do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.label :rating, 'Rating:' %>
   <%= f.number_field :rating %>
   <br><br>
