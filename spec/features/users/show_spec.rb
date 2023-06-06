@@ -61,7 +61,7 @@ RSpec.describe 'As a registered user' do
 
     it "I see a list of all my favorite playgrounds" do
       visit dashboard_path
-      require 'pry'; binding.pry
+
       expect(page).to have_content("Welcome to PlayPal, #{@user1.name}")
       expect(page).to have_content("My Favorite Playgrounds")
 

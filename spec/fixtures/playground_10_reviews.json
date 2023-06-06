@@ -4,7 +4,7 @@
     "type": "review",
     "attributes": {
       "comment": "comment",
-      "user_id": "12",
+      "user_id": "2",
       "rating": "4.2",
       "image": "image",
       "playground_id": "24"
@@ -15,7 +15,7 @@
     "type": "review",
     "attributes": {
       "comment": "this park is great!",
-      "user_id": "13",
+      "user_id": "2",
       "rating": "4.1",
       "image": "image",
       "playground_id": "24"
