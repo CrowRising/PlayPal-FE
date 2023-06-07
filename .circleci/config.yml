@@ -23,14 +23,4 @@ jobs:
           command: bundle -v
       - checkout
       - run: bundle install --path vendor/bundle
-      - run:
-          name: Yarn
-          command: 
-            npm install -g yarn
-      - run:
-          name: Install dependencies and build assets
-          command: 
-            bundle install
-            yarn install
-            yarn build:css
       - run: bundle exec rspec
