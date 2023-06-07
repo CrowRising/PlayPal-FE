@@ -31,7 +31,7 @@ class PlaygroundsService
   end
 
   def post_url(url, data)
-    response = conn.post(url, data)
+    conn.post(url, data)
   end
 
   def get_url(url)
