@@ -22,5 +22,5 @@ jobs:
           name: play_pal_fe
           command: bundle -v
       - checkout
-      - run: bundle install --path vendor/bundle`
+      - run: bundle install --path vendor/bundle
       - run: bundle exec rspec
