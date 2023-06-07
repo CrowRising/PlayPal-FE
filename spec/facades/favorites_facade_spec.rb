@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe FavoritesFacade do
   before(:each) do
     stubbed_response = File.read('spec/fixtures/favorites_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/users/2/favorites')
     .to_return(status: 200, body: stubbed_response)
   end
   describe 'instance methods' do

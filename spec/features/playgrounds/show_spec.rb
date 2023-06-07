@@ -8,11 +8,11 @@ RSpec.describe '/playgrounds#show' do
     @user1 = create(:user, id: 500, google_id: '123456789')
 
     stubbed_response = File.read('spec/fixtures/playground_24_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24')
       .to_return(status: 200, body: stubbed_response)
     
     stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24/reviews')
       .to_return(status: 200, body: stubbed_response)
 
       @user = create(:user, id: 12)
@@ -97,7 +97,7 @@ RSpec.describe '/playgrounds#show' do
     it 'When logged in and I click on this place rules I see a message that says the park has been added to favorites' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
       
-      stub_request(:post, "http://localhost:3000/api/v0/users/favorites").
+      stub_request(:post, "https://playpal-be.onrender.com/api/v0/users/favorites").
          with(
            body: {"user_playgrounds"=>{"playground_id"=>"24", "playground_name"=>"Fehringer", "user_id"=>"500"}},
            headers: {

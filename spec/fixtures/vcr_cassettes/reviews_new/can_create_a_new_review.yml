@@ -58,7 +58,7 @@ http_interactions:
   recorded_at: Tue, 06 Jun 2023 20:38:22 GMT
 - request:
     method: post
-    uri: http://localhost:3000/api/v0/playgrounds/reviews
+    uri: https://playpal-be.onrender.com/api/v0/playgrounds/reviews
     body:
       encoding: UTF-8
       string: reviews%5Bcomment%5D=This+playground+is+awesome%21&reviews%5Bimage%5D=https%3A%2F%2Fplaygroundimage.s3.us-west-1.amazonaws.com%2Ftest_image.jpg&reviews%5Bplayground_id%5D=24&reviews%5Brating%5D=5&reviews%5Buser_id%5D=500
@@ -111,7 +111,7 @@ http_interactions:
   recorded_at: Tue, 06 Jun 2023 20:38:23 GMT
 - request:
     method: get
-    uri: http://localhost:3000/api/v0/playgrounds/24/reviews
+    uri: https://playpal-be.onrender.com/api/v0/playgrounds/24/reviews
     body:
       encoding: US-ASCII
       string: ''

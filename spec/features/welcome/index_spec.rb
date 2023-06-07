@@ -20,7 +20,7 @@ RSpec.describe '/welcome#index', type: :feature do
     visit root_path
 
     stubbed_response = File.read('spec/fixtures/favorites_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/users/2/favorites')
     .to_return(status: 200, body: stubbed_response)    
   end
 
@@ -90,11 +90,11 @@ RSpec.describe '/welcome#index', type: :feature do
   describe 'Discover Playgrounds' do
     before(:each) do
       stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/1600')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/90210/1600')
       .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/0')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/90210/0')
       .to_return(status: 200, body: stubbed_response)
     end
     it 'can fill in location and radius to discover playground' do

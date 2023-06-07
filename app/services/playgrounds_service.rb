@@ -27,11 +27,11 @@ class PlaygroundsService
 
   private
   def conn
-    Faraday.new(url: 'http://localhost:3000')
+    Faraday.new(url: 'https://playpal-be.onrender.com')
   end
 
   def post_url(url, data)
-    response = conn.post(url, data)
+    conn.post(url, data)
   end
 
   def get_url(url)
