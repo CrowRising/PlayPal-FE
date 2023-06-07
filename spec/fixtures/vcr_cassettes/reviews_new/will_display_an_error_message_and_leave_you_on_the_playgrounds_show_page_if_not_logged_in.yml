@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://playpal-be.onrender.com/api/v0/playgrounds/ChIJz7xda7iLa4cRYNf2sN8C17I
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Jun 2023 16:01:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7d3a1ca959a31f49-DEN
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"6c80ad56364e1f93a573bf869187fc69"
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Render-Origin-Server:
+      - Render
+      X-Request-Id:
+      - 67d7481f-d572-408b-8ccb-97a58f75c5c1
+      X-Runtime:
+      - '0.407003'
+      X-Xss-Protection:
+      - '0'
+      Set-Cookie:
+      - __cf_bm=eRFrGbbNdL9QA4EcfJ2vdmU8atC0WzU0g8nBYYReuZ8-1686153668-0-AYL+9OytZiAgJt9kn3KXkbCoWSbqb1+ln5wNQQ4dNtklrxOGM5TBvxiwoBfQzRogr9G8hpHpFadZsUVzec1SAQQ=;
+        path=/; expires=Wed, 07-Jun-23 16:31:08 GMT; domain=.onrender.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=GaEXovMQqaSa7J0YvxOM6Q45eXSkFtBNyIc4dLwGuPY-1686153668717-0-604800000;
+        path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"ChIJz7xda7iLa4cRYNf2sN8C17I","type":"playground","attributes":{"playground_name":"Sensory
+        Park","playground_address":"7577 W 103rd Ave, Westminster, CO 80021, USA","rating":4.5,"image":"https://images.unsplash.com/photo-1674880774895-a07ba9a48080?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=M3w0NTc3NzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODYxNTM2Njh8\u0026ixlib=rb-4.0.3\u0026q=80\u0026w=400"}}}'
+  recorded_at: Wed, 07 Jun 2023 16:01:08 GMT
+- request:
+    method: get
+    uri: https://playpal-be.onrender.com/api/v0/playgrounds/ChIJz7xda7iLa4cRYNf2sN8C17I/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Jun 2023 16:01:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7d3a1cae5aec2916-DEN
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Vary:
+      - Accept-Encoding
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Render-Origin-Server:
+      - Render
+      X-Request-Id:
+      - c5705695-ef23-42be-85ee-5470cbebb0d7
+      X-Runtime:
+      - '0.003305'
+      X-Xss-Protection:
+      - '0'
+      Set-Cookie:
+      - __cf_bm=gq0EbPf9YrcOMcLJ2WOOGskIqlZVSQzxH_GvhuuCC88-1686153669-0-AYtVWSESekylR/83Smc25tR1//AJtrvcY2iovuQNNTeb/D7g/bQ/7Yx9Xt6fXjGY61VecVuXqnz1BkVZqv9xi8Y=;
+        path=/; expires=Wed, 07-Jun-23 16:31:09 GMT; domain=.onrender.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=02Qt1JarYDA.X.guL0ZUrRaoFmAwYjJDC.mdyhZtSek-1686153669046-0-604800000;
+        path=/; domain=.onrender.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[]}'
+  recorded_at: Wed, 07 Jun 2023 16:01:09 GMT
+recorded_with: VCR 6.1.0

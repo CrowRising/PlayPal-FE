@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     if current_user
     @playground_id = params[:id]
     else
-      redirect_to playgrounds_path(params[:id])
+      redirect_to "/playgrounds/#{params[:id]}", notice: 'You Must be Logged in to leave a Review'
     end
   end
 
