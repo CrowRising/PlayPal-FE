@@ -7,7 +7,7 @@ RSpec.describe '/reviews#new' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
     stubbed_response = File.read('spec/fixtures/playground_24_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24')
     .to_return(status: 200, body: stubbed_response)
       
     visit new_playground_review_path(24)

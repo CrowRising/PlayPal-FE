@@ -7,31 +7,31 @@ RSpec.describe 'As a registered user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
    
       stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/123%20st/1600')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/123%20st/1600')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/favorites_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/users/2/favorites')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playground_24_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playground_5_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/5')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/5')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playground_10_data.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/10')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/10')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playground_5_reviews.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/5/reviews')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/5/reviews')
         .to_return(status: 200, body: stubbed_response)
 
       stubbed_response = File.read('spec/fixtures/playground_10_reviews.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/10/reviews')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/10/reviews')
         .to_return(status: 200, body: stubbed_response)
     end
 
