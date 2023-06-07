@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   root 'welcome#index'
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/dashboard', to: 'users#show'
 
