@@ -23,5 +23,5 @@ jobs:
           command: bundle -v
       - checkout
       - run: bundle install --path vendor/bundle
-      - run: npm install -g yarn
+      - run: install yarn
       - run: bundle exec rspec
