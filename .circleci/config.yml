@@ -23,7 +23,4 @@ jobs:
           command: bundle -v
       - checkout
       - run: bundle install --path vendor/bundle
-      - run:
-          name: Run Database Migrations
-          command: bin/rails db:migrate RAILS_ENV=test
       - run: bundle exec rspec
