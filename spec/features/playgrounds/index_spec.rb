@@ -5,15 +5,15 @@ require 'rails_helper'
 RSpec.describe '/playgrounds#index', type: :feature do
   before(:each) do
     stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/123%20st/1600')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/123%20st/1600')
     .to_return(status: 200, body: stubbed_response)
 
     stubbed_response = File.read('spec/fixtures/playground_2_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/23')
     .to_return(status: 200, body: stubbed_response)
 
     stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/23/reviews')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/23/reviews')
     .to_return(status: 200, body: stubbed_response)
 
     
