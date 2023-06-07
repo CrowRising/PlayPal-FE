@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe PlaygroundsService do
   it 'establishes connection for playgrounds in area' do
     stubbed_response = File.read('spec/fixtures/playgrounds_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/90210/1600')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/90210/1600')
     .to_return(status: 200, body: stubbed_response)
 
     get_playgrounds = PlaygroundsService.new.get_playgrounds(90210, 1600)
@@ -26,7 +26,7 @@ RSpec.describe PlaygroundsService do
 
   it 'establishes connection for a single playground' do
     stubbed_response = File.read('spec/fixtures/playground_2_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/2')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/2')
     .to_return(status: 200, body: stubbed_response)
     
     playground = PlaygroundsService.new.get_playground(2)
@@ -41,7 +41,7 @@ RSpec.describe PlaygroundsService do
 
   it 'can get reviews for specific playground' do
     stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24/reviews')
     .to_return(status: 200, body: stubbed_response)
 
     playground = PlaygroundsService.new.get_reviews(24)
@@ -56,7 +56,7 @@ RSpec.describe PlaygroundsService do
 
     it 'can get favorites for specific user' do
         stubbed_response = File.read('spec/fixtures/favorites_data.json')
-        stub_request(:get, 'http://localhost:3000/api/v0/users/2/favorites')
+        stub_request(:get, 'https://playpal-be.onrender.com/api/v0/users/2/favorites')
         .to_return(status: 200, body: stubbed_response)
     
         favorites = PlaygroundsService.new.get_favorites(2)
