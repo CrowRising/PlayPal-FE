@@ -5,11 +5,11 @@ require 'rails_helper'
 RSpec.describe PlaygroundFacade do
   before(:each) do
     stubbed_response = File.read('spec/fixtures/playground_2_data.json')
-    stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/2')
+    stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/2')
     .to_return(status: 200, body: stubbed_response)
 
     stubbed_response = File.read('spec/fixtures/playground_24_reviews.json')
-      stub_request(:get, 'http://localhost:3000/api/v0/playgrounds/24/reviews')
+      stub_request(:get, 'https://playpal-be.onrender.com/api/v0/playgrounds/24/reviews')
       .to_return(status: 200, body: stubbed_response)
 
   end
