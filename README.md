@@ -37,30 +37,75 @@ To get a local copy, follow these simple instructions
 1. Fork the Project
 2. Clone the repo 
 ``` 
+#terminal
 git clone git@github.com:CrowRising/PlayPal-FE.git 
 ```
 3. Install the gems
 ```
+#terminal
 bundle install
 ```
 4. Create the database
 ```
+#terminal
 rails db:{create,migrate}
 ```
-
-5. Create your Feature Branch 
+5. Create application.yml
 ```
+#terminal
+bundle exec figaro install
+```
+6. Add environment variables to application.yml file
+  - Navigate to the application.yml file in the config directory
+  - Add the following to the file
+``` 
+#application.yml
+GOOGLE_CLIENT_ID: 
+GOOGLE_CLIENT_SECRET:
+AWS_ACCESS_KEY: 
+AWS_SECRET_ACCESS_KEY: 
+BUCKET_NAME: 
+AWS_REGION: 
+```
+- Get your API key at: https://code.google.com/apis/console/ Note the Client ID and the Client Secret.
+- For more details, read the Google docs: https://developers.google.com/accounts/docs/OAuth2
+  - Put your Client ID after `GOOGLE_CLIENT_ID:`
+  - PUT you CLIENT SECRET after `GOOGLE_CLIENT_SECRET:`
+- Create your AWS S3 bucket with these instructions: https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html
+  - Put the relavent information into the application.yml file for `AWS_ACCESS_KEY: AWS_SECRET_ACCESS_KEY: BUCKET_NAME: AWS_REGION:` 
+
+7. Run Tests in the terminal to verify everything was set up correctly
+```
+#terminal
+bundle exec rspec
+```
+- All tests should be passing
+8. Run Rails Server from the terminal to verify page is loading
+```
+#terminal
+rails s
+```
+- Open a web browser and navigate to `http://localhost:5000`
+- The welcome page should display
+- Note: To be able to have full functionality of the site you will also need to setup the backend repo, setup instructions can be found here: [PlayPal-BE](https://github.com/CrowRising/PlayPal-BE)
+
+### <b>Contribute your own code</b>
+1. Create your Feature Branch 
+```
+#terminal
 git checkout -b feature/AmazingFeature
 ```
-6. Commit your Changes 
+2. Commit your Changes 
 ```
+#terminal
 git commit -m 'Add some AmazingFeature' 
 ```
-7. Push to the Branch 
+3. Push to the Branch 
 ```
+#terminal
 git push origin feature/AmazingFeature
 ```
-8. Open a Pull Request
+4. Open a Pull Request
 
 
 ## How to Use PlayPal
