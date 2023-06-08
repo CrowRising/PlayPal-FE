@@ -1,14 +1,24 @@
-<h1>PlayPal</h1>
-
+<header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                                    </div>
+<h1 class="masthead-heading mb-0">Time to PlayPal</h1>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
 <p><% @facade.playgrounds.each do |pg| %>
   <div id='pg-<%= pg.id %>'>
     <ul>
-    <li>  <p>Name: <%= link_to pg.name, "/playgrounds/#{pg.id}" %>
-      Address: <%= pg.address %>
-      Rating: <%= pg.rating%></p>
+    <li>  <p><h4><%= link_to pg.name, "/playgrounds/#{pg.id}" %></h4>
+      Address: <%= pg.address %></p>
+      <p>Rating: <b><%= pg.rating%></b></p>
     </li>
     </ul>
-    
+    <br>
   </div>  
     <% end %>
+
 
