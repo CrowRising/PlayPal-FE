@@ -43,8 +43,8 @@
                     <li class="nav-item"><a class="nav-link" href="<%= root_path %>">Home</a></li>
                     <% if current_user %>
                         <li class="nav-item"><a class="nav-link" href="<%= dashboard_path %>">Dashboard</a></li>
-                        <li class="nav-item">
-                            <%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link', data: { confirm: 'Are you sure you want to logout?' } %>
+                        <li class="nav-item-logout">
+                            <%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link-logout rounded', data: { confirm: 'Are you sure you want to logout?' } %>
                         </li>
                     <% else %>
                         <li class="nav-item">
