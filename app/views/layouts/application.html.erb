@@ -35,7 +35,7 @@
 
                         <% if current_user %>
                         <li class="nav-item"><a><%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %></a></li>
-                        <li class="nav-item"><a><%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link' %></a></li>
+                        <li class="nav-item-logout"><a><%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link-logout rounded' %></a></li>
 
                         <% else %>
                         <li class="nav-item"><a><%= link_to 'Login With Google', '/auth/google_oauth2', class: 'nav-link' %></a></li>
