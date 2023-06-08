@@ -47,13 +47,13 @@ RSpec.describe 'As a registered user' do
       expect(current_path).to eq(playgrounds_path)
 
       within '#pg-23' do
-        expect(page).to have_content('Name: Fehringer')
+        expect(page).to have_content('Fehringer')
         expect(page).to have_content('Address: 1400 U Street')
         expect(page).to have_content('Rating: 2.5')
       end
 
       within '#pg-24' do
-        expect(page).to have_content('Name: Birds Nest')
+        expect(page).to have_content('Birds Nest')
         expect(page).to have_content('Address: 1700 U Street')
         expect(page).to have_content('Rating: 2.7')
       end
