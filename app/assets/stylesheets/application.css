@@ -3627,6 +3627,16 @@ textarea.form-control-lg {
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+.nav-link-logout {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: #67d5c0;
+  background-color: #000000;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -10848,6 +10858,12 @@ html {
   font-weight: 700;
 }
 .navbar-custom .navbar-nav .nav-item .nav-link {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.navbar-custom .navbar-nav .nav-item-logout .nav-link-logout {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 700;
