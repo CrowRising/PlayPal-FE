@@ -61,3 +61,4 @@ RSpec.describe '/playgrounds#index', type: :feature do
     end
   end
 end
+
