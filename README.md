@@ -11,7 +11,7 @@ PlayPal is a playground and park finder app. Designed for parents looking for ne
 <br><br>
                                                   <img src="https://www.miracle-recreation.com/content/uploads/2018/11/Image-Header_Park.jpg.webp" width="600" height="400">
                                                   
- This front end app works with our back end app found here: [PlayPal-BE](https://github.com/CrowRising/PlayPal-BE)                                                 
+ This front end app works with our back end app found here: [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/CrowRising/PlayPal-BE)                                                 
                                                   
 ## Built With
 * ![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
@@ -22,6 +22,7 @@ PlayPal is a playground and park finder app. Designed for parents looking for ne
 * ![CircleCi](https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white)
 * ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 * ![Love](https://ForTheBadge.com/images/badges/built-with-love.svg)
+* ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 
 ## Running On
@@ -149,4 +150,4 @@ Don't forget to give the project a star! Thanks again!
 
 ## Planning Tools
 - [![Miro Board](https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white)](https://miro.com/app/board/uXjVMDHct-E=/)
-- [GitHub Project Board](https://github.com/users/CrowRising/projects/5)
+- [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/users/CrowRising/projects/5)
