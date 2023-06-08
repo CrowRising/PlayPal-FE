@@ -1,19 +1,32 @@
-<h1> Welcome to PlayPal, <%= current_user.name %></h1>
-<%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br><br>
-  <%= f.label :radius, 'Search Mile Radius', step: 0.5 %>
-  <%= f.number_field :radius %>
-  <br><br>
-  <%= f.submit 'Discover Playgrounds' %>
-<% end %>
-
-<h3>My Favorite Playgrounds</h3>
-<ul>
-  <% @facade.favorites.each do |favorite| %>
+<header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                                    </div>
+<h1 class="masthead-heading mb-0"> Welcome to PlayPal, <%= current_user.name %></h1>
+            <h3>Find a Playground Near Me</h3>
+                    <br>
+                    <%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
+                      <h6><%= f.label :location %></h6>
+                      <%= f.text_field :location, class: 'rounded-pill' %>
+                      <br><br>
+                      <h6><%= f.label :radius, 'Search Mile Radius' %></h6>
+                      <%= f.number_field :radius, class: 'rounded-pill', step: 0.5 %>
+                      <br>
+                      <%= f.submit 'Discover Playgrounds', class: 'btn btn-primary btn-xl rounded-pill mt-5' %>
+                    <% end %>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+        <br>
+        <h1 class='text-center'> My Favorite Playgrounds </h1>
+<p><% @facade.favorites.each do |favorite| %>
   <div id='pg-<%= favorite.playground_id %>'>
-    <li><%= link_to favorite.playground_name, "/playgrounds/#{favorite.playground_id}" %></li>
-    </div>
-  <% end %>
-</ul>
+    <ul>
+    <li>  <p><h4><%= link_to favorite.playground_name, "/playgrounds/#{favorite.playground_id}" %></h4>
+    </li>
+    </ul>
+  </div>  
+    <% end %>

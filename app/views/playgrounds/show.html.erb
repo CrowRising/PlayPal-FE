@@ -13,6 +13,9 @@
 <div id="image">
     <div class="row gx-3 align-items-center"><%= image_tag @facade.playground_image%></div>
 </div>
+<% flash.each do |type, message| %>
+    <h4 class="error_msg"><%= message %></h4>
+<% end %>
 <% if current_user %>
   <%= form_with url: '/add_to_favorites', local: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
@@ -41,8 +44,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
-                        <h2 class="display-4">Author: </b><%= review.user_name %></h2>
-                        <h4 class="display-6"> Review: <%= review.comment %></h4>
+                        <h4 class="display-5"></b><%= review.user_name %> says...</h4>
+                        <h4 class="display-6"><%= review.comment %></h4>
                         <h4 class="display-6"> Rating: <%= review.rating %></h4>
                     </div>
                 </div>
