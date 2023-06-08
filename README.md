@@ -60,6 +60,32 @@ git push origin feature/AmazingFeature
 8. Open a Pull Request
 
 
+## How to Use PlayPal
+
+From the welcome page you can either log in with google or search for playgrounds without logging in. 
+![Welcome Page](app/assets/config/Screenshot%202023-06-08%20at%2014.00.09.png)
+
+If no information is filled out in the search fields an ereror message will flash.
+![Error Message](app/assets/images/Screenshot%202023-06-08%20at%2014.07.02.png)
+Once you have plugged in the area you would like to search for playgrounds at you are taken to an index page of all the parks.
+![Playground Index Page](app/assets/images/Screenshot%202023-06-08%20at%2014.02.33.png)
+
+All of the Playgrounds' names are links, once clicked you are taken to the playground show page and if there are any reviews on that playground they will show up below the image
+![Playground Show Page](app/assets/images/Screenshot%202023-06-08%20at%2014.22.58.png)
+
+If you were a logged in user you would have the option to add a review and or add this playground to your favorites/
+![Logged in User Buttons](app/assets/images/Screenshot%202023-06-08%20at%2014.05.12.png)
+
+On a Logged in User's Dashboard there is a list of their favorite playgrounds as well as an option to search for more.
+![User Dashboard](app/assets/images/Screenshot%202023-06-08%20at%2014.04.24.png)
+
+If a logged in user wanted to leave a review they would have to fill out all three field in the review form.
+![Review Form](app/assets/images/Screenshot%202023-06-08%20at%2014.08.08.png)
+
+When the display is smaller, like on a phone, the menu bar become a drop down. With the option to sign in or logout.
+![Login](app/assets/images/Screenshot%202023-06-08%20at%2014.04.04.png)
+![Logout](app/assets/images/Screenshot%202023-06-08%20at%2014.06.15.png)
+
 ## Contributing  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/CrowRising/PlayPal-FE/issues)
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
