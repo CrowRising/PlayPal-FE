@@ -5,18 +5,43 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+     <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>One Page Wonder - Start Bootstrap Template</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
   </head>
-
-  <body>
+  <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">PlayPal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a><%= link_to 'Home', root_path, class: 'nav-link' %></a></li>
+                        <% if current_user %>
+                        <li class="nav-item"><a><%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %></a></li>
+                        <li class="nav-item"><a><%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link' %></a></li>
+                        <% else %>
+                        <li class="nav-item"><a><%= link_to 'Login With Google', '/auth/google_oauth2', class: 'nav-link' %></a></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
   <% flash.each do |type, message| %>
     <p><%= message %></p>
-    <% end %>
-    <%= link_to 'Home', root_path %>
-    <% if current_user %>
-      <%= link_to 'Dashboard', dashboard_path %>
     <% end %>
       <%= yield %>
   </body>
