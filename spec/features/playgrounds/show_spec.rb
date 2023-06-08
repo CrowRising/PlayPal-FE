@@ -50,13 +50,13 @@ RSpec.describe '/playgrounds#show' do
       expect(page).to have_content('Reviews:')
     
       within "#review_322458" do
-        expect(page).to have_content("Author: #{@user.name}")
-        expect(page).to have_content("Review: comment")
+        expect(page).to have_content("#{@user.name} says...")
+        expect(page).to have_content("comment")
         expect(page).to have_content("Rating: 4.2")
       end
       within "#review_5" do
-        expect(page).to have_content("Author: #{@user2.name}")
-        expect(page).to have_content("Review: this park is great")
+        expect(page).to have_content("#{@user2.name} says...")
+        expect(page).to have_content("this park is great")
         expect(page).to have_content("Rating: 4.1")
       end
 
