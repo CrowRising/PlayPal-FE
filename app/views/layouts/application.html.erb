@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>PlayPalFe</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -23,25 +30,28 @@
         <link href="css/styles.css" rel="stylesheet" />
   </head>
 
-  <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#page-top">PlayPal</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a><%= link_to 'Home', root_path, class: 'nav-link' %></a></li>
-
-                        <% if current_user %>
-                        <li class="nav-item"><a><%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %></a></li>
-                        <li class="nav-item"><a><%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link' %></a></li>
-
-                        <% else %>
-                        <li class="nav-item"><a><%= link_to 'Login With Google', '/auth/google_oauth2', class: 'nav-link' %></a></li>
-                        <% end %>
-                    </ul>
-                </div>
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="#page-top">PlayPal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="<%= root_path %>">Home</a></li>
+                    <% if current_user %>
+                        <li class="nav-item"><a class="nav-link" href="<%= dashboard_path %>">Dashboard</a></li>
+                        <li class="nav-item">
+                            <%= button_to 'Logout', '/logout', method: :delete, class: 'nav-link', data: { confirm: 'Are you sure you want to logout?' } %>
+                        </li>
+                    <% else %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/google_oauth2">Login With Google</a>
+                        </li>
+                    <% end %>
+                </ul>
             </div>
         </nav>
     <%= yield %>
