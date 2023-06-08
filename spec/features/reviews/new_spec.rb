@@ -14,8 +14,8 @@ RSpec.describe '/reviews#new' do
 
     expect(page).to have_field('Rating:')
     expect(page).to have_field('Review:')
-    expect(page).to have_field('Upload Image:')
-    expect(page).to have_button('Tell em!')
+    expect(page).to have_field('image')
+    expect(page).to have_button("Tell 'em!")
   end
 
   it 'can create a new review', :vcr do
@@ -26,7 +26,7 @@ RSpec.describe '/reviews#new' do
     fill_in 'Rating:', with: 5
     fill_in 'Review:', with: 'This playground is awesome!'
     attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
-    click_button 'Tell em!'
+    click_button "Tell 'em!"
 
     expect(current_path).to eq('/playgrounds/24')
   end
@@ -38,7 +38,7 @@ RSpec.describe '/reviews#new' do
 
     fill_in 'Rating:', with: 5
     fill_in 'Review:', with: 'This playground is awesome!'
-    click_button 'Tell em!'
+    click_button "Tell 'em!"
 
     expect(current_path).to eq(new_playground_review_path(24))
     expect(page).to have_content('All fields must be filled out.')
@@ -51,7 +51,7 @@ RSpec.describe '/reviews#new' do
 
     fill_in 'Review:', with: 'This playground is awesome!'
     attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
-    click_button 'Tell em!'
+    click_button "Tell 'em!"
 
     expect(current_path).to eq(new_playground_review_path(24))
     expect(page).to have_content('All fields must be filled out.')
@@ -64,7 +64,7 @@ RSpec.describe '/reviews#new' do
 
     fill_in 'Rating:', with: 5
     attach_file('image', Rails.root.join('spec/images/test_image.jpg'))
-    click_button 'Tell em!'
+    click_button "Tell 'em!"
 
     expect(current_path).to eq(new_playground_review_path(24))
     expect(page).to have_content('All fields must be filled out.')

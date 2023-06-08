@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>One Page Wonder - Start Bootstrap Template</title>
+        <title>PlayPal</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -53,15 +53,13 @@
                     <% end %>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    <% flash.each do |type, message| %>
-        <p><%= message %></p>
-    <% end %>
-
+        </nav>
     <%= yield %>
-</body>
-
+  </body>
+ <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; PlayPal 2023</p></div>
+        </footer>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
 </html>
-

@@ -1,15 +1,37 @@
-<h1>PlayPal Review</h1>
-
-<%= form_with url: "/playgrounds/#{@playground_id}/reviews", method: :post, local: true do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.label :rating, 'Rating:' %>
-  <%= f.number_field :rating, in: 1..5 %>
-  <br><br>
-  <%= f.label :comment, 'Review:', step: 0.5 %>
-  <%= f.text_field :comment %>
-  <br><br>
-  <%= f.label :image, 'Upload Image:', step: 0.5 %>
-  <%= f.file_field :image %>
-  <br><br>
-  <%= f.submit 'Tell em!' %>
-<% end %>
+<header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                                    </div>
+<h1 class="masthead-heading mb-0"> PlayPal Review</h1>
+                    <br>
+                    <%= form_with url: "/playgrounds/#{@playground_id}/reviews", method: :post, local: true do |f| %>
+                      <%= f.hidden_field :user_id, value: current_user.id %>
+                      <h4><%= f.label :rating, 'Rating:' %></h4>
+                      <%= f.number_field :rating, in: 1..5, class: 'rounded-pill text-center number' %>
+                      <br><br><br>
+                      <h3> <%= f.label :comment, 'Review:' %></h3>
+                      <%= f.text_area :comment, class: 'rounded', size: "50x5" %>
+                      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                      <main class="main_full">
+                        <div class="container">
+                          <div class="panel">
+                            <div class="button_outer">
+                              <div class="btn_upload">
+                                <%= f.file_field :image, id: "upload_file", name: "image" %>
+                                Upload Image
+                              </div>
+                              </div>
+                          </div>
+                        </div>
+                      </main>
+                      <% flash.each do |type, message| %>
+                        <h4 class="error_msg"><%= message %></h4>
+                      <% end %>
+                      <%= f.submit "Tell 'em!", class: 'btn btn-primary btn-xl rounded-pill mt-5' %>
+                    <% end %>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
