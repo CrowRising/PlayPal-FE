@@ -1,19 +1,32 @@
-<h1>Welcome to PlayPal</h1>
-<h3>The one stop shop for discovering playgrounds near you!</h3>
-
-<% if session[:user_id] %>
-  <%= button_to 'Logout', '/logout', method: :delete %>
-<% else %>
-  <%= link_to 'Login With Google', '/auth/google_oauth2' %>
-<% end %>
-<br><br>
-<h3>Find a Playground Near Me</h3>
-<%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br><br>
-  <%= f.label :radius, 'Search Mile Radius', step: 0.5 %>
-  <%= f.number_field :radius %>
-  <br><br>
-  <%= f.submit 'Discover Playgrounds' %>
-<% end %>
+<header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-4">
+                    <h1 class="masthead-heading mb-0">Welcome to PlayPal</h1>
+                    <h2 class="masthead-subheading mb-0">The one stop shop for discovering playgrounds near you!</h2>
+                    <br><br><br><br>
+                    <h3>Find a Playground Near Me</h3>
+                    <br>
+                    <%= form_with url: '/playgrounds', method: :get, local: true do |f| %>
+                      <h6><%= f.label :location %></h6>
+                      <%= f.text_field :location, class: 'rounded-pill' %>
+                      <br><br>
+                      <h6><%= f.label :radius, 'Search Mile Radius' %></h6>
+                      <%= f.number_field :radius, class: 'rounded-pill', step: 0.5 %>
+                      <br>
+                      <%= f.submit 'Discover Playgrounds', class: 'btn btn-primary btn-xl rounded-pill mt-5' %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+        <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; PlayPal 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
