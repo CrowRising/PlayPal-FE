@@ -35,7 +35,7 @@ RSpec.describe '/playgrounds#show' do
       end
 
       within "#image" do
-        expect(page).to have_css('img')
+        expect(page).to have_css("img")
       end
     end
 
