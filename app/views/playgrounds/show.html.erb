@@ -1,6 +1,17 @@
-<h1><%= @facade.playground_name %></h1> 
-<h2><%= @facade.playground_address %>  Rating: <%= @facade.playground_rating %></h2>
-<div id='image'><%= image_tag @facade.playground_image %></div>
+<header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                                    </div>
+<h1 class="masthead-heading mb-0"><%= @facade.playground_name %></h1>
+<br>
+<h3 class="masthead-subheading mb-0"><%= @facade.playground_address %>  <p><br>Rating: <%= @facade.playground_rating %></p></h3>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+<div class="row gx-3 align-items-center"><%= image_tag @facade.playground_image%></div>
 <br>
 <% if current_user %>
   <%= form_with url: '/add_to_favorites', local: true do |f| %>
@@ -14,6 +25,8 @@
 
   
 <h3>Reviews:</h3>
+ 
+<section>
 <ul>
 <% @facade.reviews.each do |review| %>
   <div id='review_<%= review.id %>'>
@@ -22,6 +35,19 @@
   <p><%= image_tag review.image, size: "480x300"%>
   </div>
   <br>
-<% end %>
   </ul>
- 
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4">We salute you!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<% end %>
+        </section>
