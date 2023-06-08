@@ -1,27 +1,53 @@
-<h1><%= @facade.playground_name %></h1> 
-<h2><%= @facade.playground_address %>  Rating: <%= @facade.playground_rating %></h2>
-<div id='image'><%= image_tag @facade.playground_image %></div>
-<br>
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-4">
+                    <h1 class="masthead-heading mb-0"><%= @facade.playground_name %></h1><br>
+                    <h3 class="masthead-subheading mb-0"><%= @facade.playground_address %>  <p><br>Rating: <%= @facade.playground_rating %></p></h3>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+<div id="image">
+    <div class="row gx-3 align-items-center"><%= image_tag @facade.playground_image%></div>
+</div>
 <% if current_user %>
   <%= form_with url: '/add_to_favorites', local: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :playground_id, value: @facade.id %>
   <%= f.hidden_field :playground_name, value: @facade.playground_name %>
-  <%= f.submit 'This Place Rules!' %>
+  <div class='text-center'>
+  <%= f.submit 'This Place Rules!', class: 'btn btn-primary btn-xl rounded-pill mt-5' %>
+</div>
   <% end %>
-<h3><%= link_to "Add Your Two Cents!", new_playground_review_path(@facade.id), style: "padding: 10px 20px; background-color: #6d10c9; color: white; text-decoration: none; border: none; border-radius: 4px;" %></h3>
+<div class='text-center'>
+<%= link_to "Add Your Two Cents!", new_playground_review_path(@facade.id), class: 'btn btn-primary btn-xl rounded-pill mt-5' %>
+</div>
 <% end %>
-
-  
-<h3>Reviews:</h3>
-<ul>
+<br><br>
+<div class='text-center'>
+<h2 class='masthead-subheading'>Reviews:</h2>
+</div>
+ 
+<section>
 <% @facade.reviews.each do |review| %>
   <div id='review_<%= review.id %>'>
-  <li><p><b>Author: </b><%= review.user_name %>  <b>Rating: </b><%= review.rating %><p></li>
-  <p><b>Review: </b><%= review.comment %></p>
-  <p><%= image_tag review.image, size: "480x300"%>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5"><img class="img-fluid rounded-pill" src=<%= review.image %> alt="..." /></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Author: </b><%= review.user_name %></h2>
+                        <h4 class="display-6"> Review: <%= review.comment %></h4>
+                        <h4 class="display-6"> Rating: <%= review.rating %></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
   </div>
-  <br>
 <% end %>
-  </ul>
- 
+        </section>

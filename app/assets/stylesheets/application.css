@@ -533,7 +533,7 @@ progress {
 }
 
 .display-6 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.275rem + 0.3vw);
   font-weight: 300;
   line-height: 1.2;
 }
@@ -586,6 +586,12 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.image-container {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 .img-thumbnail {
@@ -661,7 +667,15 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+}
+
 .row > * {
+  position: sticky;
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
@@ -10843,8 +10857,8 @@ html {
 header.masthead {
   position: relative;
   overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
+  padding-top: calc(7rem + 5px);
+  padding-bottom: 3rem;
   background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
   background-repeat: no-repeat;
   background-position: center center;
@@ -10865,7 +10879,7 @@ header.masthead .bg-circle {
   z-index: 0;
   position: absolute;
   border-radius: 100%;
-  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+  background: linear-gradient(0deg, #03fccf 0%, #ff6a00 100%);
 }
 header.masthead .bg-circle-1 {
   height: 90rem;
