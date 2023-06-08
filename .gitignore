@@ -33,3 +33,5 @@
 # Ignore application configuration
 /config/application.yml
 /coverage
+!/app/assets/builds/.keep
+
