@@ -13,6 +13,9 @@
 <div id="image">
     <div class="row gx-3 align-items-center"><%= image_tag @facade.playground_image%></div>
 </div>
+<% flash.each do |type, message| %>
+    <h4 class="error_msg"><%= message %></h4>
+<% end %>
 <% if current_user %>
   <%= form_with url: '/add_to_favorites', local: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
