@@ -5,6 +5,8 @@
 
 # PlayPal
 
+![](app/assets/images/Colorful%20Cute%20Rainbow%20Baby%20Clothes%20Logo.png)
+
 ## About This Project
 ### Mod 3 Group Consultancy Project
 PlayPal is a playground and park finder app. Designed for parents looking for new, fun, safe playgrounds within any given area/location. PlayPal has the ability for registered users to upload pictures, rate and review playgrounds that help inform the community.
